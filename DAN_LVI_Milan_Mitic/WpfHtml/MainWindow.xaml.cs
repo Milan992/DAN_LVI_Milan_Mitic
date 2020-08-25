@@ -1,17 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.IO;
+using System.Net;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using System.IO.Compression;
 
 namespace WpfHtml
 {
@@ -24,5 +14,61 @@ namespace WpfHtml
         {
             InitializeComponent();
         }
+
+        private void btnHtml_Click(object sender, RoutedEventArgs e)
+        {
+            if (TextBox2.Text != null)
+            {
+                if (TextBox2.Text.Length > 0)
+                {
+                    WebClient wc = new WebClient();
+                    string html = "";
+                    try
+                    {
+                        html = wc.DownloadString(TextBox1.Text);
+                        if (!File.Exists(@"..\..\" + TextBox2.Text + ".html"))
+                        {
+                            using (StreamWriter sw = new StreamWriter(@"..\..\htmlFiles\" + TextBox2.Text + ".html", false))
+                            {
+                                sw.Write(html);
+                            }
+                            MessageBox.Show("Html file saved.");
+                        }
+                        else
+                        {
+                            MessageBox.Show("File " + TextBox2.Text + " already exist");
+                        }
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Invalid adress.");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("File name must be at least one character long.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("File name must be at least one character long.");
+            }
+        }
+
+        private void btnZip_Click(object sender, RoutedEventArgs e)
+        {
+            string startPath = @"..\..\htmlFiles";
+            string zipPath = @"..\..\zippedFiles\htmlFiles.zip";
+
+            int counter = 1;
+            while (File.Exists(zipPath))
+            {
+                zipPath = @"..\..\zippedFiles\htmlFiles" + counter.ToString() + ".zip";
+                counter++;
+            }
+            ZipFile.CreateFromDirectory(startPath, zipPath);
+            MessageBox.Show("All html files are zipped.");
+        }
     }
 }
+
