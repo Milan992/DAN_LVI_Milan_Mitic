@@ -1,0 +1,2188 @@
+<!DOCTYPE HTML>
+
+
+<html lang="en">
+<head>
+
+	
+	<link rel="preconnect" href="https://apps.developermedia.com">
+	<link rel="preconnect" href="https://cdn1.developermedia.com">
+	<link rel="preconnect" href="https://cdn.ampproject.org">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://https://ajax.googleapis.com">
+	<link rel="preconnect" href="https://adservice.google.com">
+	<link rel="preconnect" href="https://www.googletagservices.com">
+	<link rel="preconnect" href="https://www.googletagmanager.com">
+	<link rel="preconnect" href="https://www.google.com">
+	<link rel="preconnect" href="https://www.google-analytics.com">
+	<link rel="preconnect" href="https://pagead2.googlesyndication.com">
+
+	<link rel="preconnect" href="https://www.codeproject.com">
+<title>How to download a webpage into a txt file using C#? - CodeProject</title><link type="text/css" rel="stylesheet" href="https://www.codeproject.com/App_Themes/CodeProject/Css/Main.min.css?dt=2.8.200821.1">
+<style type="text/css">
+div.grippie { background:#eee url(https://www.codeproject.com/images/gripH.png) no-repeat scroll center 2px;
+border-color:#ddd;
+border-style:solid;
+border-width:0pt 1px 1px;
+cursor:s-resize;
+height:9px;
+overflow:hidden;
+}
+.resizable-control textarea {
+display:block;
+margin-bottom:0pt;
+width:95%;
+height: 20%;
+}
+
+</style>
+
+<script type="text/javascript" src="https://www.codeproject.com/script/JS/jquery-2.2.4.min.js" defer ></script>
+<script type="text/javascript" src="/script/JS/spin.min.js" defer ></script>
+<script type="text/javascript" src="https://www.codeproject.com/script/Content/JS/editor.min.js?dt=2.8.200821.1" defer ></script>
+<script type="text/javascript" src="https://www.recaptcha.net/recaptcha/api.js" defer ></script>
+<script type="text/javascript" src="https://www.codeproject.com/script/Answers/JS/qa.min.js?dt=2.8.200821.1" defer ></script>
+<script type="text/javascript" src="/script/JS/PasswordStrength.min.js" defer ></script>
+<script type="text/javascript" src="/script/JS/advertisement.min.js" defer ></script>
+<script type="text/javascript" src="/a.min.js?v=1.3" defer ></script>
+
+<meta http-equiv="content-language" content="en-US">
+<meta charset="UTF-8"><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info = {"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"NRJS-6910f3030b2dfc5103a","applicationID":"614056083","transactionName":"Z1EHZ0JSXUdSVhZQC14bJGBgHEBXQVwSTUtRWhZEVUFAG1ZbFksdHlUWQ0g=","queueTime":0,"applicationTime":325,"agent":"","atts":""}</script><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"NRJS-6910f3030b2dfc5103a",applicationID:"614056083"};window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var i=n[t]={exports:{}};e[t][0].call(i.exports,function(n){var i=e[t][1][n];return r(i||n)},i,i.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<t.length;i++)r(t[i]);return r}({1:[function(e,n,t){function r(){}function i(e,n,t){return function(){return o(e,[u.now()].concat(c(arguments)),n?null:this,t),n?void 0:this}}var o=e("handle"),a=e(5),c=e(6),f=e("ee").get("tracer"),u=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(e,n){s[n]=i(p+n,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,i="function"==typeof n;return o(l+"tracer",[u.now(),e,t],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],t),i)try{return n.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],t),e}finally{f.emit("fn-end",[u.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=i(l+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),o("err",[e,u.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){var t=e.getEntries();t.forEach(function(e){"first-paint"===e.name?d("timing",["fp",Math.floor(e.startTime)]):"first-contentful-paint"===e.name&&d("timing",["fcp",Math.floor(e.startTime)])})}function i(e,n){var t=e.getEntries();t.length>0&&d("lcp",[t[t.length-1]])}function o(e){e.getEntries().forEach(function(e){e.hadRecentInput||d("cls",[e])})}function a(e){if(e instanceof m&&!g){var n=Math.round(e.timeStamp),t={type:e.type};n<=p.now()?t.fid=p.now()-n:n>p.offset&&n<=Date.now()?(n-=p.offset,t.fid=p.now()-n):n=p.now(),g=!0,d("timing",["fi",n,t])}}function c(e){d("pageHide",[p.now(),e])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var f,u,s,d=e("handle"),p=e("loader"),l=e(4),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){f=new PerformanceObserver(r);try{f.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,y=["click","keydown","mousedown","pointerdown","touchstart"];y.forEach(function(e){document.addEventListener(e,a,!1)})}l(c)}},{}],3:[function(e,n,t){function r(e,n){if(!i)return!1;if(e!==i)return!1;if(!n)return!0;if(!o)return!1;for(var t=o.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}n.exports={agent:i,version:o,match:r}},{}],4:[function(e,n,t){function r(e){function n(){e(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,n,!1)}n.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],5:[function(e,n,t){function r(e,n){var t=[],r="",o=0;for(r in e)i.call(e,r)&&(t[o]=n(r,e[r]),o+=1);return t}var i=Object.prototype.hasOwnProperty;n.exports=r},{}],6:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,i=t-n||0,o=Array(i<0?0:i);++r<i;)o[r]=e[n+r];return o}n.exports=r},{}],7:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function i(e){function n(e){return e&&e instanceof r?e:e?f(e,c,o):o()}function t(t,r,i,o){if(!p.aborted||o){e&&e(t,r,i);for(var a=n(i),c=v(t),f=c.length,u=0;u<f;u++)c[u].apply(a,r);var d=s[w[t]];return d&&d.push([b,t,r,a]),a}}function l(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return d[e]=d[e]||i(t)}function y(e,n){u(e,function(e,t){n=n||"feature",w[t]=n,n in s||(s[n]=[])})}var h={},w={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:y,abort:a,aborted:!1};return b}function o(){return new r}function a(){(s.api||s.feature)&&(p.aborted=!0,s=p.backlog={})}var c="nr@context",f=e("gos"),u=e(5),s={},d={},p=n.exports=i();p.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(i.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return e[n]=r,r}var i=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){i.buffer([e],r),i.emit(e,n,t)}var i=e("ee").get("handle");n.exports=r,r.ee=i},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,o,function(){return i++})}var i=1,o="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=E.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();u(w,function(n,t){e[n]||(e[n]=t)});var t=a();f("mark",["onload",t+E.offset],null,"api"),f("timing",["load",t]);var r=l.createElement("script");r.src="https://"+e.agent,n.parentNode.insertBefore(r,n)}}function i(){"complete"===l.readyState&&o()}function o(){f("mark",["domContent",a()+E.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(c=Math.max((new Date).getTime(),c))-E.offset}var c=(new Date).getTime(),f=e("handle"),u=e(5),s=e("ee"),d=e(3),p=window,l=p.document,m="addEventListener",v="attachEvent",g=p.XMLHttpRequest,y=g&&g.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:g,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var h=""+location,w={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1177.min.js"},b=g&&y&&y[m]&&!/CriOS/.test(navigator.userAgent),E=n.exports={offset:c,now:a,origin:h,features:{},xhrWrappable:b,userAgent:d};e(1),e(2),l[m]?(l[m]("DOMContentLoaded",o,!1),p[m]("load",r,!1)):(l[v]("onreadystatechange",i),p[v]("onload",r)),f("mark",["firstbyte",c],null,"api");var x=0,O=e(7)},{}],"wrap-function":[function(e,n,t){function r(e){return!(e&&e instanceof Function&&e.apply&&!e[a])}var i=e("ee"),o=e(6),a="nr@original",c=Object.prototype.hasOwnProperty,f=!1;n.exports=function(e,n){function t(e,n,t,i){function nrWrapper(){var r,a,c,f;try{a=this,r=o(arguments),c="function"==typeof t?t(r,a):t||{}}catch(u){p([u,"",[r,a,i],c])}s(n+"start",[r,a,i],c);try{return f=e.apply(a,r)}catch(d){throw s(n+"err",[r,a,d],c),d}finally{s(n+"end",[r,a,f],c)}}return r(e)?e:(n||(n=""),nrWrapper[a]=e,d(e,nrWrapper),nrWrapper)}function u(e,n,i,o){i||(i="");var a,c,f,u="-"===i.charAt(0);for(f=0;f<n.length;f++)c=n[f],a=e[c],r(a)||(e[c]=t(a,u?c+i:i,o,c))}function s(t,r,i){if(!f||n){var o=f;f=!0;try{e.emit(t,r,i,n)}catch(a){p([a,t,r,i])}f=o}}function d(e,n){if(Object.defineProperty&&Object.keys)try{var t=Object.keys(e);return t.forEach(function(t){Object.defineProperty(n,t,{get:function(){return e[t]},set:function(n){return e[t]=n,n}})}),n}catch(r){p([r])}for(var i in e)c.call(e,i)&&(n[i]=e[i]);return n}function p(n){try{e.emit("internal-error",n)}catch(t){}}return e||(e=i),t.inPlace=u,t.flag=a,t}},{}]},{},["loader"]);</script>
+<meta name="Description" content="Free source code and tutorials for Software developers and Architects.; Updated: 24 Mar 2017">
+<meta name="Keywords" content="Free source code, tutorials">
+<meta name="Author" content="CodeProject">
+<meta name="Rating" content="General">
+<meta name="Revisit-After" content="1 days">
+<meta name="application-name" content="CodeProject">
+<meta name="google-translate-customization" content="d908bb7ce7aff658-4c2f3a504525c916-g629383f736781a8a-13">
+
+<link rel="dns-prefetch" href="//ajax.googleapis.com"> 
+<link rel="canonical" href="/Questions/1178451/How-to-download-a-webpage-into-a-txt-file-using-Cs" />
+
+<link rel="alternate" type="application/rss+xml" title="CodeProject Latest articles - All Topics" href="https://www.codeproject.com/WebServices/ArticleRSS.aspx?cat=1" />
+<link rel="alternate" type="application/rss+xml" title="CodeProject Latest articles - Artificial Intelligence" href="https://www.codeproject.com/WebServices/ArticleRSS.aspx?cat=31" />
+<link rel="alternate" type="application/rss+xml" title="CodeProject Lounge Postings" href="https://www.codeproject.com/webservices/LoungeRSS.aspx" />
+<meta name="robots" content="index, follow" />
+<link rel="search" type="application/opensearchdescription+xml" title="CodeProject" href="https://www.codeproject.com/info/OpenSearch.xml">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="apple-touch-icon" sizes="144x144" href="/favicon/apple-touch-icon.png"> 
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"> 
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"> 
+<link rel="manifest" href="/favicon/manifest.json"> 
+<link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#ff9900"><base target="_top" >
+
+
+<script type='text/javascript'>
+function defrm () { /* thanks twitter */
+    document.write = '';
+    window.top.location = window.self.location;
+    setTimeout(function() { document.body.innerHTML = ''; }, 0);
+    window.self.onload = function(evt) { document.body.innerHTML = ''; };
+}
+
+if (window.top !== window.self) {
+    try {
+        if (window.top.location.host) { /* will throw for all except chrome */ }
+        else { defrm(); /* chrome */ }
+    } catch (ex) { defrm(); /* everyone else */ }
+}
+
+// Specific case where a site is screwing with us.
+if (typeof(DemoUrl) !== 'undefined') {
+    document.write(unescape('%3Cme') + 'ta http' + '-equiv="re' + 'fresh con' +
+                           'tent="1;url=' + DemoUrl + unescape('"%3CE'));
+}
+</script>
+
+
+
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-1735123-1"></script>
+    <script type="text/javascript">
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-1735123-1' );
+    </script>
+
+</head>
+
+<body class=" 0" itemscope itemtype="http://schema.org/QAPage">
+
+<a class="access-link" href="#Main"><img alt="Click here to Skip to main content" src="https://www.codeproject.com/images/t.gif" /></a>
+
+    <div class="page-background">
+
+	
+	<div id="ctl00_ctl00_STM" class="site-top-menu fixed">
+		<div class="main-content">
+			
+
+<div class="container memberbar clearfix flex-container flex-extend">
+
+	<div id="ctl00_ctl00_MemberBar_GenInfo" class="flex-item align-left">14,615,089 members</div>
+
+	<div class="flex-item">
+		
+	</div>
+
+	<div class="flex-item align-right">
+
+		
+
+		
+
+		
+
+			<script type="text/javascript">//<!--
+			function doSubmit(secure)
+			{
+				if (secure)
+					document.signinForm.action = "https://www.codeproject.com/script/Membership/LogOn.aspx?rp=%2fQuestions%2f1178451%2fHow-to-download-a-webpage-into-a-txt-file-using-Cs"
+				else
+					document.signinForm.action = "https://www.codeproject.com/script/Membership/LogOn.aspx?rp=%2fQuestions%2f1178451%2fHow-to-download-a-webpage-into-a-txt-file-using-Cs"
+				document.signinForm.submit();
+				return true;
+			}//-->
+			</script>
+
+			<a name="SignUp"></a>
+			<span class="member-signin tooltip openable">
+				<span><a href="https://www.codeproject.com/script/Membership/LogOn.aspx?rp=%2fQuestions%2f1178451%2fHow-to-download-a-webpage-into-a-txt-file-using-Cs">Sign in</a>
+                    <img src="https://www.codeproject.com/App_Themes/CodeProject/Img/login32.png"
+                        width="16px" height="16px" style="vertical-align:middle;"/>
+				</span>
+
+				<div class="tooltip-flyout">
+					<form name="signinForm" id="signinForm" action="https://www.codeproject.com/script/Membership/LogOn.aspx?rp=%2fQuestions%2f1178451%2fHow-to-download-a-webpage-into-a-txt-file-using-Cs" method="post"
+						class="tight">
+
+						
+						<input id="FormName" name="FormName" value="MenuBarForm" type="hidden" />
+
+						<div>Email</div>
+						<div><input class="small-text" type="email" name="Email" id="Email" autocomplete="email" /></div>
+						<div>Password</div>
+						<div><input class="small-text" type="password" name="Password" id="Password" 
+							autocomplete="current-password" /></div>
+						<div class="action">
+                            <input id='joinBtn' type='button' class='create hidden' onclick='return Join();' value='Join' />
+                            <input type='hidden' name='fld_quicksign' value='true' />
+							<input type="submit" value="Sign in" class="signin" onclick="return doSubmit(false);" />
+						</div>
+
+						<div class="container">
+							
+							&nbsp;
+							<a id="ctl00_ctl00_MemberBar_SendPassword" class="forgot float-right" href="/script/Membership/SendPassword.aspx?rp=/Questions/1178451/How-to-download-a-webpage-into-a-txt-file-using-Cs">Forgot your password?</a>
+						</div>
+					</form>
+
+					<hr class="divider-dark" />
+
+					Sign in with <a class="oauth" alt="Sign in using Github" title="Sign in using Github" href="/script/Membership/OAuthLogOn.aspx?auth=GitHub"><img src="/script/Membership/Images/octicons_github.png" style="vertical-align:middle;padding-right:3px;border:0;" /></a>
+<a class="oauth" alt="Sign in using Facebook" title="Sign in using Facebook" href="/script/Membership/OAuthLogOn.aspx?auth=Facebook"><img src="/script/Membership/Images/facebook.png" style="vertical-align:middle;padding-right:3px;border:0;" /></a>
+<a class="oauth" alt="Sign in using Google" title="Sign in using Google" href="/script/Membership/OAuthLogOn.aspx?auth=Google"><img src="/script/Membership/Images/google-plus.png" style="vertical-align:middle;padding-right:3px;border:0;" /></a>
+<a class="oauth" alt="Sign in using Microsoft" title="Sign in using Microsoft" href="/script/Membership/OAuthLogOn.aspx?auth=Microsoft"><img src="/script/Membership/Images/microsoft.png" style="vertical-align:middle;padding-right:3px;border:0;" /></a>
+
+				</div>
+            </span>
+		
+	</div>
+</div>
+		</div>
+	</div>
+
+	
+	<div id="ctl00_ctl00_SH" class="site-header fixed">
+		<div class="main-content">
+			<div class="logo"><a href="/"><img id="ctl00_ctl00_Logo" tabindex="1" title="CodeProject" src="https://www.codeproject.com/App_Themes/CodeProject/Img/logo250x135.gif" alt="Home" height="135" width="250" border="0" /></a></div>
+			<div class="promo"><div class="msg-728x90" data-format="728x90" data-type="ad" data-publisher="lqm.codeproject.site" data-zone="ros"  data-country='US' data-tags='C#, WebClient,pos_top'><noscript><a href="https://pubads.g.doubleclick.net/gampad/jump?iu=/6839/lqm.codeproject.site/ros&sz=728x90&c=879096"><img src="https://pubads.g.doubleclick.net/gampad/jump?iu=/6839/lqm.codeproject.site/ros&sz=728x90&c=879096"  width="728px" height="90px" target="_blank"/></a></noscript></div></div>
+		</div>
+	</div>
+
+	
+	<div id="ctl00_ctl00_TPR" class="sub-headerbar clearfix fixed">
+	<div class="float-right">
+		
+
+<div class="searchbar">
+
+<form method="get" action="/search.aspx?sbo=kw" name="Search" class="tight">
+
+
+<table border="0" cellspacing="0" cellpadding="0" class="search"><tr><td><input TabIndex="2" class="search " id="sb_tb" autocomplete="off" value="" name="q" /></td><td><input type="image" src="https://www.codeproject.com/images/search.gif" /></td></tr></table>
+
+<div class="hover-container">
+	<div id="SearchFilter" class="search-advanced popup small-text align-left">
+	<b>Search within:<br /></b>
+		
+		<input type="radio" id="sb_kw" name="sbo" value="kw"><label for="sb_kw">Articles</label><br>
+<input type="radio" id="sb_qa" name="sbo" value="qa" checked="checked"><label for="sb_qa">Quick Answers</label><br>
+<input type="radio" id="sb_fm" name="sbo" value="fm"><label for="sb_fm">Messages</label><br>
+
+
+		
+		<div id="ctl00_ctl00_SearchBarCtrl_UseSavedFilters" class="padded-top"><input type="checkbox" id="usf" name="usf" /><label for="usf">Use my saved <a target="_blank" href="https://www.codeproject.com/script/Membership/Modify.aspx#contentfilter">content filters</a></label><input type="hidden" id="usfc" name="usfc" value="false" /></div>
+
+		
+		
+	</div>
+</div>
+</form>
+
+</div>
+	</div>
+	<div class="float-left">
+		
+
+<div class="navbar clearfix">
+<ul class="navmenu openable">
+
+<li class="desktop-only"><a id="ctl00_ctl00_TopNavBar_Home" href="https://www.codeproject.com">home</a>
+
+
+<li class="openable"><a id="ctl00_ctl00_TopNavBar_Art" class="down" href="/script/Articles/Latest.aspx">articles</a>
+
+	<ul>
+		<li class="openable"><a id="ctl00_ctl00_TopNavBar_ArtTopicList" class="fly" onmouseover="navBarMenu.ShowMap(this, &#39;ctl00_ctl00_TopNavBar_MapFlyout&#39;);" href="/script/Content/SiteMap.aspx">Chapters and Sections<span class="has-submenu">&gt;</span></a><ul id="ctl00_ctl00_TopNavBar_MapFlyout" class="taxonomy">
+			<li>
+				<div id="siteMap"></div>
+			</li>
+			</ul>
+		</li>
+		<li><a id="ctl00_ctl00_TopNavBar_ArtLatestArts" class="fly" href="/script/Articles/Latest.aspx">Latest Articles</a></li>
+		<li><a id="ctl00_ctl00_TopNavBar_ArtTop" class="fly" href="/script/Articles/TopArticles.aspx?ta_so=5">Top Articles</a></li>
+		<li><a id="ctl00_ctl00_TopNavBar_ArtGuide" class="fly" href="/info/Submit.aspx">Posting/Update Guidelines</a></li>
+		<li><a id="ctl00_ctl00_TopNavBar_ArtHelpForum" class="fly" href="/Forums/1641/Article-Writing.aspx">Article Help Forum</a></li>
+		<li><a id="ctl00_ctl00_TopNavBar_ArtPostArticle" class="fly highlight1" href="/script/Articles/Submit.aspx">
+			<img src="https://www.codeproject.com/images/write13.png" width="13" height="13" /> Submit an article or tip
+			</a></li>
+        
+		<li><a id="ctl00_ctl00_TopNavBar_ArtImportGitHub" class="fly highlight3" href="/script/Articles/ImportArticle.aspx">
+			<img src="https://www.codeproject.com/images/write13.png" width="13" height="13" /> Import GitHub Project
+			</a></li>
+        
+		<li><a id="ctl00_ctl00_TopNavBar_ArtPostBlog" class="fly highlight2" href="/script/Articles/BlogFeed.aspx">
+			<img src="https://www.codeproject.com/images/write13.png" width="13" height="13" /> Import your Blog
+			</a></li>		
+        
+        <li class="last"></li>
+	</ul>
+
+</li>
+
+
+
+<li class="openable">
+<a id="ctl00_ctl00_TopNavBar_Answers" class=" selected" href="/script/Answers/List.aspx?tab=active">
+    <span class="desktop-only tablet-only">quick answers</span><span class="mobile-only">Q&amp;A</span>
+</a>
+	<ul>
+		
+
+		<li><a id="ctl00_ctl00_TopNavBar_QAAsk" class="fly highlight2" href="/Questions/ask.aspx"><img 
+			src="https://www.codeproject.com/images/write13.png" width="13" height="13" /> Ask a Question</a></li>
+
+		<li><a id="ctl00_ctl00_TopNavBar_QAUnanswered" class="fly" href="/script/Answers/List.aspx?tab=unanswered">View Unanswered Questions</a></li>
+		<li><a id="ctl00_ctl00_TopNavBar_QALatest" class="fly" href="/script/Answers/List.aspx?tab=active">View All Questions</a></li>
+        
+				<li><a id="ctl00_ctl00_TopNavBar_QATR_ctl00_Tag" class="fly" href="/script/Answers/List.aspx?tab=active&amp;alltags=true&amp;tags=81" style="padding-left:30px">View C# questions</a></li>
+			
+				<li><a id="ctl00_ctl00_TopNavBar_QATR_ctl01_Tag" class="fly" href="/script/Answers/List.aspx?tab=active&amp;alltags=true&amp;tags=842" style="padding-left:30px">View VB.NET questions</a></li>
+			
+				<li><a id="ctl00_ctl00_TopNavBar_QATR_ctl02_Tag" class="fly" href="/script/Answers/List.aspx?tab=active&amp;alltags=true&amp;tags=93" style="padding-left:30px">View SQL questions</a></li>
+			
+				<li><a id="ctl00_ctl00_TopNavBar_QATR_ctl03_Tag" class="fly" href="/script/Answers/List.aspx?tab=active&amp;alltags=true&amp;tags=85" style="padding-left:30px">View ASP.NET questions</a></li>
+			
+				<li><a id="ctl00_ctl00_TopNavBar_QATR_ctl04_Tag" class="fly" href="/script/Answers/List.aspx?tab=active&amp;alltags=true&amp;tags=87" style="padding-left:30px">View Javascript questions</a></li>
+			
+    
+		<li class="last"></li>
+	</ul>
+
+</li>
+
+
+
+<li class="openable"><a id="ctl00_ctl00_TopNavBar_Forums" href="/script/Forums/List.aspx">
+        <span class="desktop-only tablet-only">discussions</span><span class="mobile-only">forums</span>
+</a>
+
+	<ul>
+		<li><a id="ctl00_ctl00_TopNavBar_MessageBoardsAll" class="fly" href="/script/Forums/List.aspx">All Message Boards...</a></li>
+		<li class="openable"><a class="fly" style="padding-left:30px" href="/Forums/1580997/Application-Lifecycle.aspx">Application Lifecycle<span class="has-submenu">&gt;</span></a>
+<ul class="openable"><li><a class="fly" href="/Forums/1533717/Running-a-Business.aspx">Running a Business</a></li>
+<li><a class="fly" href="/Forums/1533716/Sales-Marketing.aspx">Sales / Marketing</a></li>
+<li><a class="fly" href="/Forums/1651/Collaboration-Beta-Testing.aspx">Collaboration / Beta Testing</a></li>
+<li><a class="fly" href="/Forums/3304/Work-Issues.aspx">Work  Issues</a></li>
+</ul></li>
+<li><a class="fly" style="padding-left:30px" href="/Forums/369270/Design-and-Architecture.aspx">Design and Architecture</a>
+</li>
+<li><a class="fly" style="padding-left:30px" href="/Forums/12076/ASP-NET.aspx">ASP.NET</a>
+</li>
+<li><a class="fly" style="padding-left:30px" href="/Forums/1580226/JavaScript.aspx">JavaScript</a>
+</li>
+<li class="openable"><a class="fly" style="padding-left:30px" href="/Forums/1647/C-Cplusplus-MFC.aspx">C / C++ / MFC<span class="has-submenu">&gt;</span></a>
+<ul class="openable"><li><a class="fly" href="/Forums/4486/ATL-WTL-STL.aspx">ATL /  WTL / STL</a></li>
+<li><a class="fly" href="/Forums/3785/Managed-Cplusplus-CLI.aspx">Managed C++/CLI</a></li>
+</ul></li>
+<li><a class="fly" style="padding-left:30px" href="/Forums/1649/Csharp.aspx">C#</a>
+</li>
+<li><a class="fly" style="padding-left:30px" href="/Forums/1627782/Free-Tools.aspx">Free Tools</a>
+</li>
+<li><a class="fly" style="padding-left:30px" href="/Forums/1827460/Objective-C-and-Swift.aspx">Objective-C and Swift</a>
+</li>
+<li><a class="fly" style="padding-left:30px" href="/Forums/1725/Database.aspx">Database</a>
+</li>
+<li class="openable"><a class="fly" style="padding-left:30px" href="/Forums/186301/Hardware-Devices.aspx">Hardware &amp; Devices<span class="has-submenu">&gt;</span></a>
+<ul class="openable"><li><a class="fly" href="/Forums/1644/System-Admin.aspx">System Admin</a></li>
+</ul></li>
+<li><a class="fly" style="padding-left:30px" href="/Forums/1606152/Hosting-and-Servers.aspx">Hosting and Servers</a>
+</li>
+<li><a class="fly" style="padding-left:30px" href="/Forums/1643/Java.aspx">Java</a>
+</li>
+<li><a class="fly" style="padding-left:30px" href="/Forums/1942421/Linux-Programming.aspx">Linux Programming</a>
+</li>
+<li><a class="fly" style="padding-left:30px" href="/Forums/1650/NET-Core-and-Framework.aspx">.NET (Core and Framework)</a>
+</li>
+<li><a class="fly" style="padding-left:30px" href="/Forums/1848626/Android.aspx">Android</a>
+</li>
+<li><a class="fly" style="padding-left:30px" href="/Forums/1876716/iOS.aspx">iOS</a>
+</li>
+<li><a class="fly" style="padding-left:30px" href="/Forums/13695/Mobile.aspx">Mobile</a>
+</li>
+<li><a class="fly" style="padding-left:30px" href="/Forums/1540733/SharePoint.aspx">SharePoint</a>
+</li>
+<li><a class="fly" style="padding-left:30px" href="/Forums/1004257/Silverlight-WPF.aspx">Silverlight / WPF</a>
+</li>
+<li><a class="fly" style="padding-left:30px" href="/Forums/1646/Visual-Basic.aspx">Visual Basic</a>
+</li>
+<li><a class="fly" style="padding-left:30px" href="/Forums/1640/Web-Development.aspx">Web Development</a>
+</li>
+<li><a class="fly" style="padding-left:30px" href="/suggestions.aspx">Site Bugs / Suggestions</a>
+</li>
+<li><a class="fly" style="padding-left:30px" href="/Forums/1652005/Spam-and-Abuse-Watch.aspx">Spam and Abuse Watch</a>
+</li>
+
+		<li class="last"></li>
+	</ul>
+
+</li>
+
+<li class="openable"><a id="ctl00_ctl00_TopNavBar_Features" href="/Feature/">
+      <span class="desktop-only tablet-only">features</span><span class="mobile-only">stuff</span>
+</a>
+
+	<ul>
+		<li><a id="ctl00_ctl00_TopNavBar_Comps" class="fly" href="/script/Contests/CurrentCompetitions.aspx?cmpTpId=3&amp;awsac=true">Competitions</a></li>
+        
+		<li><a id="ctl00_ctl00_TopNavBar_Conferences" class="fly" href="/script/Conferences/List.aspx">Conferences</a></li>
+		
+		<li><a id="ctl00_ctl00_TopNavBar_News" class="fly" href="/script/News/List.aspx">News</a></li>
+		<li><a id="ctl00_ctl00_TopNavBar_Insider" class="fly" href="/Feature/Insider/">The Insider Newsletter</a></li>
+    	<li><a id="ctl00_ctl00_TopNavBar_DailyBuild" class="fly" href="/Feature/DailyBuild">The Daily Build Newsletter</a></li>
+		<li><a id="ctl00_ctl00_TopNavBar_Newsletters" class="fly" href="/script/Mailouts/Archive.aspx?mtpid=1">Newsletter archive</a></li>
+		<li><a id="ctl00_ctl00_TopNavBar_Surveys" class="fly" href="/script/Surveys/List.aspx">Surveys</a></li>
+		<li><a id="ctl00_ctl00_TopNavBar_Showcase" class="fly" href="/KB/showcase/">Product Showcase</a></li>
+        
+		<li><a id="ctl00_ctl00_TopNavBar_Stuff" class="fly" href="/Info/Stuff.aspx">CodeProject Stuff</a></li>
+		<li class="last"></li>
+	</ul>
+
+</li>
+
+
+<li  class="openable"><a id="ctl00_ctl00_TopNavBar_Lounge" href="/Lounge.aspx">
+            <span class="desktop-only tablet-only">community</span><span class="mobile-only">lounge</span>
+</a>
+
+	<ul>
+		<li><a id="ctl00_ctl00_TopNavBar_WhosWho" class="fly" href="/script/Membership/Profiles.aspx">Who's Who</a></li>
+		<li><a id="ctl00_ctl00_TopNavBar_MVPs" class="fly break" href="/script/Contests/Winners.aspx?obtid=1&amp;cmpTpId=2&amp;cid=0">Most Valuable Professionals</a></li>
+
+		<li><a id="ctl00_ctl00_TopNavBar_LoungeLnk" class="fly highlight2" href="/Lounge.aspx">The Lounge Â </a></li>
+		<li><a id="ctl00_ctl00_TopNavBar_WhereAmILink" class="fly" href="/Forums/1939564/Where-I-am-Member-Photos.aspx">Where I Am: Member Photos</a></li>
+		<li><a id="ctl00_ctl00_TopNavBar_InsiderLnk" class="fly" href="/Insider.aspx">The Insider News</a></li>
+		<li><a id="ctl00_ctl00_TopNavBar_WeirdWonderful" class="fly" href="/Feature/WeirdAndWonderful.aspx">The Weird & The Wonderful</a></li>
+
+		<li class="last"></li>
+	</ul>
+
+</li>
+
+
+<li class="openable" style="margin-left:20px"><a id="ctl00_ctl00_TopNavBar_Help" href="/KB/FAQs/">
+    <span class="desktop-only tablet-only">help</span><span class="mobile-only">?</span>
+</a>
+
+
+	<ul>
+		<li><a id="ctl00_ctl00_TopNavBar_HelpWhatIs" class="fly" href="/info/guide.aspx">What is 'CodeProject'?</a></li>
+		<li><a id="ctl00_ctl00_TopNavBar_HelpGeneral" class="fly break" href="/KB/FAQs/">General FAQ</a></li>
+		<li><a id="ctl00_ctl00_TopNavBar_HelpPostQuestion" class="fly break highlight2" href="/Questions/ask.aspx">Ask a Question</a></li>
+		<li><a id="ctl00_ctl00_TopNavBar_HelpBugs" class="fly" href="/suggestions.aspx">Bugs and Suggestions</a></li>
+		<li><a id="ctl00_ctl00_TopNavBar_HelpArticles" class="fly" href="/Forums/1641/Article-Writing.aspx">Article Help Forum</a></li>
+		
+		
+		
+		
+		<li><a id="ctl00_ctl00_TopNavBar_HelpAboutUs" class="fly" href="/info/about.aspx">About Us</a></li>
+		<li class="last"></li>
+	</ul>
+
+</li>
+
+</ul>
+
+</div>
+	</div>
+	<div class="sub-headerbar-divider"></div>
+	</div>
+	
+
+	<div id="C" class="container-content-wrap fixed"> 
+	<div class="container-content">
+
+		<div class="container-breadcrumb">
+		
+		</div>
+
+		
+		
+		
+
+		<div id="ctl00_ctl00_ContentPane" class="container-main">
+
+            
+			<div style="min-height:600px">
+
+				<a name="Main"></a>
+
+                
+				
+
+				
+				
+
+                
+				
+
+
+<form name="aspnetForm" method="post">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+
+<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="47897F27" />
+
+<div id="Q" class="container-entry container-question">
+
+<div id="T" class="text fixed">
+	
+	<div class="clearfix">
+		
+		<div id="ctl00_ctl00_MC_QARow" class="mainlinks">
+            <div class="float-left">
+			    <a id="ctl00_ctl00_MC_AskQ" class="button compose" href="/Questions/ask.aspx">Ask a Question</a>
+            </div>
+			<div class="navigation float-right">
+				<a id="ctl00_ctl00_MC_Latest" href="/script/Answers/List.aspx?tab=active">All<span class="desktop-only"> Questions</span></a>
+				<a id="ctl00_ctl00_MC_Unansw" href="/script/Answers/List.aspx?tab=unanswered"><span class="desktop-only">All </span>Unanswered</a> 
+				
+				<a id="ctl00_ctl00_MC_Help" class="faq" href="/KB/FAQs/QuickAnswersFAQ.aspx">FAQ</a>
+			</div>
+		</div>
+	</div>
+
+	<div id="contentdiv">
+	
+	<!-- Main Page Contents Start -->
+	
+
+<script type="text/javascript">
+function ConfirmDelete() { return window.confirm("Are you sure you want to delete this item?"); }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<a name="_articleTop"></a>
+
+
+<div class="float-right" style="width:150px">
+	
+</div>
+
+<div itemprop="mainEntity" itemscope itemtype="http://schema.org/Question">
+
+    <div class="question">
+
+    
+    <div class="header">
+	    <a id="ctl00_ctl00_MC_AMC_TitleLink" class="header tight padded-top" href="/Questions/1178451/How-to-download-a-webpage-into-a-txt-file-using-Cs"><h1 id="ctl00_ctl00_MC_AMC_ItemTitle" itemprop="name">How to download a webpage into a txt file using C#?</h1></a>
+    </div>
+
+    <div id="CC" class="container-content">
+
+	    
+	    <div class="container-question clearfix extended">
+
+		    <div class="rate-group">
+
+			    
+			    <div class="rate-item">
+			        <div id="ctl00_ctl00_MC_AMC_RatePost_RateItemWrapper" class="container-rating small-text" name="RateItem_1178451">
+
+	<table width="100%" cellpadding="0" cellspacing="0" class="small-text">
+	<tr>
+		<td id="ctl00_ctl00_MC_AMC_RatePost_VoteResultDiv" class="rating-result align-right">
+			<span class="align-right"></span>
+			<img class="loading invisible" width="16px" alt="loading..." height="16px" 
+				src="/images/loading16.gif" /> 
+		</td>
+
+	
+		<td class="voteTbl" style="white-space:nowrap" align="right">
+			<table class="small-text">
+			<tr>
+				<td id="ctl00_ctl00_MC_AMC_RatePost_RateText" class="rating-prompt">
+					Rate this:
+				</td>
+
+				
+				<td id="ctl00_ctl00_MC_AMC_RatePost_VoteFormDiv" class="nowrap tooltip rating-stars-voter-medium" style="padding-top:1px">
+
+                    
+					
+
+
+
+<table id="ctl00_ctl00_MC_AMC_RatePost_ItemRating_RatingTable" cellpadding="0" cellspacing="0" style="margin:0 1px;" class="hide-on-hover float-left">
+	<tr>
+		<td class="nowrap">
+
+        <div  style="width:80px;height:20px;position:relative" class="nowrap rating-stars-medium"><div style="width:16px;height:16px;" class="clipped align-left float-left"><img src="https://codeproject.freetls.fastly.net/script/Ratings/Images/stars-fill-md.png"></div><div style="width:64px;height:16px;position:relative" class="clipped"><img src="https://codeproject.freetls.fastly.net/script/Ratings/Images/stars-empty-md.png" style="position:absolute;top:0;right:0"></div>
+
+		
+	</td>
+	</tr>
+</table>
+
+<span id="ctl00_ctl00_MC_AMC_RatePost_ItemRating_RatingText"></span>
+
+
+                    
+					<span id="ctl00_ctl00_MC_AMC_RatePost_RB" class="ajaxHist radio voting show-on-hover">
+						<span id="ctl00_ctl00_MC_AMC_RatePost_VoteRBL"><input id="ctl00_ctl00_MC_AMC_RatePost_VoteRBL_0" type="radio" name="ctl00$ctl00$MC$AMC$RatePost$VoteRBL" value="1" /><input id="ctl00_ctl00_MC_AMC_RatePost_VoteRBL_1" type="radio" name="ctl00$ctl00$MC$AMC$RatePost$VoteRBL" value="2" /><input id="ctl00_ctl00_MC_AMC_RatePost_VoteRBL_2" type="radio" name="ctl00$ctl00$MC$AMC$RatePost$VoteRBL" value="3" /><input id="ctl00_ctl00_MC_AMC_RatePost_VoteRBL_3" type="radio" name="ctl00$ctl00$MC$AMC$RatePost$VoteRBL" value="4" /><input id="ctl00_ctl00_MC_AMC_RatePost_VoteRBL_4" type="radio" name="ctl00$ctl00$MC$AMC$RatePost$VoteRBL" value="5" /></span> 
+					</span>
+
+                    
+					<div id="ctl00_ctl00_MC_AMC_RatePost_histPHC" class="speech-bubble-container-up-right" style="width:175px;margin-top:24px;right:-15px;top:6px">
+						<div class="speech-bubble-up-right">
+							<div id="ctl00_ctl00_MC_AMC_RatePost_HistogramC">
+
+</div>
+							<img id="ctl00_ctl00_MC_AMC_RatePost_LoadingC" class="align-middle" src="/images/loading24.gif" border="0" />
+						</div>
+						<div class="speech-bubble-pointer-up-right">
+							<div class="speech-bubble-pointer-up-right-inner"></div>
+						</div>
+					</div>
+
+                    
+	                
+
+                    
+                    <div id="ctl00_ctl00_MC_AMC_RatePost_RSU" class="speech-bubble-container-down">
+		                <div class="speech-bubble-down">
+                            Please <a id="ctl00_ctl00_MC_AMC_RatePost_SignUp" href="https://www.codeproject.com/script/Membership/LogOn.aspx?rp=%2fQuestions%2f1178451%2fHow-to-download-a-webpage-into-a-txt-file-using-Cs">Sign up or sign in</a> 
+                            to vote.
+		                </div>
+		                <div class="speech-bubble-pointer-down">
+			                <div class="speech-bubble-pointer-down-inner"></div>
+		                </div>
+	                </div>    
+
+				</td>
+
+				
+                
+
+				<td style="padding-left:5px">	
+					<input type="submit" name="ctl00$ctl00$MC$AMC$RatePost$SubmitRateBtn" value="Vote!" id="ctl00_ctl00_MC_AMC_RatePost_SubmitRateBtn" class="button" />
+				</td>
+			</tr>
+			</table>
+
+			
+		</td>
+	</tr>
+	</table>
+
+</div>
+			    </div>
+
+			    
+
+		    </div>
+
+		    
+		    <div>
+			    <span id="ctl00_ctl00_MC_AMC_TagList_TagWrp" class="medium-text tags horizontal">
+
+	
+	<span id="ctl00_ctl00_MC_AMC_TagList_TagLabel" class="bold">See more:</span>
+
+	
+	<span id="ctl00_ctl00_MC_AMC_TagList_VisibleTags"><div class="t"><a href="/script/Answers/List.aspx?tab=active&tags=81" data-id="81">C#</a></div><div class="t"><a href="/script/Answers/List.aspx?tab=active&tags=3800" data-id="3800">WebClient</a></div></span> 
+
+	
+	
+</span>
+
+
+		    </div>
+
+		    <div style="margin-top:25px" itemprop="text">
+			    <html><head></head><body><b></b>I need to download the text content of a webpage and save it to a txt file using C#.<br>
+<br>
+<b>What I have tried:</b><br>
+<br>
+I am a beginner in coding, I have googled and found someways to create and write a file using C#.But i couldn't get the c# tutorial for downloading a webpage into a txt file.</body></html>
+		    </div>
+	    </div>
+
+    </div>
+
+    <div class="qa-info clearfix">
+	    <div class="small-text commands float-right">
+
+		    
+		    
+	    </div>	
+
+	    
+	    <div class="column">
+		    <strong>Posted</strong> <time itemprop="dateCreated" datetime="2017-03-23T23:35:00">23-Mar-17 23:35pm</time>
+<div class="member-rep-container">  
+	<a id="ctl00_ctl00_MC_AMC_QuestionAuthorRepInfo_MemberName" href="/script/Membership/View.aspx?mid=13081509"><span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">Member 13081509</span></span></a><span id="ctl00_ctl00_MC_AMC_QuestionAuthorRepInfo_TotalPoints" title="Total reputation points" class="member-rep-box"></span>
+</div>
+
+	    </div>
+
+	    
+	    
+	    <div class="column" style="margin-left:10px">
+		    <b>Updated</b> 24-Mar-17 0:06am
+<div class="member-rep-container">  
+	<a id="ctl00_ctl00_MC_AMC_QuestionEditorRepInfo_MemberName" href="/script/Membership/View.aspx?mid=2965702"><span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">Nelek</span></span></a><span id="ctl00_ctl00_MC_AMC_QuestionEditorRepInfo_TotalPoints" title="Total reputation points" class="member-rep-box"></span>
+</div>
+
+	    </div>
+
+	    
+	    <div class="version"><a href="/script/Articles/ListVersions.aspx?aid=1178451">v2</a></div>
+	
+    </div>
+
+    
+
+    
+    <div class="spaced padded-top">
+	    <a id="ctl00_ctl00_MC_AMC_AddChild1" class="button large anchorLink" href="/Questions/1178451/answer.aspx">Add a Solution</a>
+    </div>
+
+    
+    <a id="ctl00_ctl00_MC_AMC_QuestionComments_ContainerPermalink" class="CommentAnchor" name="cmt2_1178451"></a>
+
+<div id="ctl00_ctl00_MC_AMC_QuestionComments_CommentContainer" class="container-comments" ObjectRef="2_1178451_2" PageNumber="0" PageSize="0" BoldMemberId="13081509" CurrentMemberId="0" ModifyStatus="False">	 
+
+	
+	
+
+	
+	<div name="CP-CommentList" class="comment-list">
+		
+	</div> 
+
+	 
+	
+
+	  
+
+</div> 
+
+
+    </div>
+
+    
+
+        
+        <div class="QATopPager">
+	        
+        </div>
+
+        
+        <div class="answer-list-header row">
+            <div class="float-left">
+                <h2 id="ctl00_ctl00_MC_AMC_AnswerCount" class="tight"><span itemprop="answerCount">2 </span> solutions</h2>
+            </div>
+            <div class="float-right" style="margin-top: 15px;">
+	            <ul class="ui-tabs-nav ui-helper-reset ui-corner-all clearfix">
+	<li id="ctl00_ctl00_MC_AMC_TabsCtrl_TabsRpt_ctl01_LI" class="ui-corner-top ui-tabs-selected">
+		<a id="ctl00_ctl00_MC_AMC_TabsCtrl_TabsRpt_ctl01_TL" title="Best rated answers" class="ui-corner-top">
+			<span>Top Rated</span>
+		</a>
+		
+	</li>
+
+	<li id="ctl00_ctl00_MC_AMC_TabsCtrl_TabsRpt_ctl02_LI" class="ui-corner-top ">
+		<a id="ctl00_ctl00_MC_AMC_TabsCtrl_TabsRpt_ctl02_TL" title="Newest answers posted to this question" class="ui-corner-top" href="/Questions/1178451/How-to-download-a-webpage-into-a-txt-file-using-Cs?tab=mostrecent">
+			<span>Most Recent</span>
+		</a>
+		
+	</li>
+</ul>
+
+            </div>
+        </div>
+
+        <div class="ui-tabs-panel tight">
+	        
+		        <div id="ctl00_ctl00_MC_AMC_Answers_ctl00_A_AnswerGroup" class="answer-row answer first" itemscope="" itemtype="http://schema.org/Answer" itemprop="suggestedAnswer">
+
+
+<div id="ctl00_ctl00_MC_AMC_Answers_ctl00_A_Header" class="header container">
+
+	
+	
+	<div class="rate-group">
+
+		<div class="rate-item">
+			<div id="ctl00_ctl00_MC_AMC_Answers_ctl00_A_RatePost_RateItemWrapper" class="container-rating small-text" name="RateItem_1178463">
+
+	<table width="100%" cellpadding="0" cellspacing="0" class="small-text">
+	<tr>
+		<td id="ctl00_ctl00_MC_AMC_Answers_ctl00_A_RatePost_VoteResultDiv" class="rating-result align-right">
+			<span class="align-right"></span>
+			<img class="loading invisible" width="16px" alt="loading..." height="16px" 
+				src="/images/loading16.gif" /> 
+		</td>
+
+	
+		<td class="voteTbl" style="white-space:nowrap" align="right">
+			<table class="small-text">
+			<tr>
+				<td id="ctl00_ctl00_MC_AMC_Answers_ctl00_A_RatePost_RateText" class="rating-prompt">
+					Rate this:
+				</td>
+
+				
+				<td id="ctl00_ctl00_MC_AMC_Answers_ctl00_A_RatePost_VoteFormDiv" class="nowrap tooltip rating-stars-voter-medium" style="padding-top:1px">
+
+                    
+					
+
+
+
+<table id="ctl00_ctl00_MC_AMC_Answers_ctl00_A_RatePost_ItemRating_RatingTable" cellpadding="0" cellspacing="0" style="margin:0 1px;" class="hide-on-hover float-left">
+	<tr>
+		<td class="nowrap">
+
+        <div class="rating-stars-medium"><img src="https://codeproject.freetls.fastly.net/script/Ratings/Images/stars-empty-md.png" style="width:80px;height:16px"></div>
+
+		
+	</td>
+	</tr>
+</table>
+
+<span id="ctl00_ctl00_MC_AMC_Answers_ctl00_A_RatePost_ItemRating_RatingText"></span>
+
+
+                    
+					<span id="ctl00_ctl00_MC_AMC_Answers_ctl00_A_RatePost_RB" class="ajaxHist radio voting show-on-hover">
+						<span id="ctl00_ctl00_MC_AMC_Answers_ctl00_A_RatePost_VoteRBL"><input id="ctl00_ctl00_MC_AMC_Answers_ctl00_A_RatePost_VoteRBL_0" type="radio" name="ctl00$ctl00$MC$AMC$Answers$ctl00$A$RatePost$VoteRBL" value="1" /><input id="ctl00_ctl00_MC_AMC_Answers_ctl00_A_RatePost_VoteRBL_1" type="radio" name="ctl00$ctl00$MC$AMC$Answers$ctl00$A$RatePost$VoteRBL" value="2" /><input id="ctl00_ctl00_MC_AMC_Answers_ctl00_A_RatePost_VoteRBL_2" type="radio" name="ctl00$ctl00$MC$AMC$Answers$ctl00$A$RatePost$VoteRBL" value="3" /><input id="ctl00_ctl00_MC_AMC_Answers_ctl00_A_RatePost_VoteRBL_3" type="radio" name="ctl00$ctl00$MC$AMC$Answers$ctl00$A$RatePost$VoteRBL" value="4" /><input id="ctl00_ctl00_MC_AMC_Answers_ctl00_A_RatePost_VoteRBL_4" type="radio" name="ctl00$ctl00$MC$AMC$Answers$ctl00$A$RatePost$VoteRBL" value="5" /></span> 
+					</span>
+
+                    
+					
+
+                    
+	                
+
+                    
+                    <div id="ctl00_ctl00_MC_AMC_Answers_ctl00_A_RatePost_RSU" class="speech-bubble-container-down">
+		                <div class="speech-bubble-down">
+                            Please <a id="ctl00_ctl00_MC_AMC_Answers_ctl00_A_RatePost_SignUp" href="https://www.codeproject.com/script/Membership/LogOn.aspx?rp=%2fQuestions%2f1178451%2fHow-to-download-a-webpage-into-a-txt-file-using-Cs">Sign up or sign in</a> 
+                            to vote.
+		                </div>
+		                <div class="speech-bubble-pointer-down">
+			                <div class="speech-bubble-pointer-down-inner"></div>
+		                </div>
+	                </div>    
+
+				</td>
+
+				
+                
+
+				<td style="padding-left:5px">	
+					<input type="submit" name="ctl00$ctl00$MC$AMC$Answers$ctl00$A$RatePost$SubmitRateBtn" value="Vote!" id="ctl00_ctl00_MC_AMC_Answers_ctl00_A_RatePost_SubmitRateBtn" class="button" />
+				</td>
+			</tr>
+			</table>
+
+			
+		</td>
+	</tr>
+	</table>
+
+</div>
+		</div>
+
+        
+	</div>
+	
+
+	
+	<h2 id="ctl00_ctl00_MC_AMC_Answers_ctl00_A_Title" class="float-left" style="margin:-10px 0 0 5px">Solution 2</h2><a id="ctl00_ctl00_MC_AMC_Answers_ctl00_A_Heading" itemprop="url" name="answer2"></a>
+
+	
+	<div class="float-left" style="margin:3px 0 0 20px">
+	<a id="ctl00_ctl00_MC_AMC_Answers_ctl00_A_Accept" title="Mark this solution as an accepted solution." class="button safe" style="display:none;">AcceptÂ Solution</a>
+	<a id="ctl00_ctl00_MC_AMC_Answers_ctl00_A_Unaccept" title="Revoke accepted solution designation." class="button unsafe" style="display:none;">RejectÂ Solution</a>
+	</div>
+
+	<p id="AcceptError" class="error" style="display:none"></p>
+		
+	
+	
+</div>
+
+
+<div class="text" itemprop="text">
+    <html><head></head><body>See the <a href="https://msdn.microsoft.com/en-us/library/fhd1f0sw(v=vs.110).aspx">WebClient.DownloadString Method (String) (System.Net)</a>[<a href="https://msdn.microsoft.com/en-us/library/fhd1f0sw(v=vs.110).aspx" target="_blank" title="New Window">^</a>].<br>
+It gets the content of a web site into a string which can be written to a file.<br>
+<br>
+But you should use the <i>.htm</i> or <i>.html</i> file extension because web sites are HTML. If you want the content of the web site as plain text, you have to use a HTML to text converter.</body></html>
+</div>
+
+<div></div>
+
+<div class="qa-info clearfix">
+	
+	<div class="float-right commands">
+
+		
+		&nbsp;
+		<a id="ctl00_ctl00_MC_AMC_Answers_ctl00_A_Permalink" rel="nofollow" itemprop="url" href="/Answers/1178463/How-to-download-a-webpage-into-a-txt-file-using-Cs">Permalink</a>
+		&nbsp;
+		 
+
+		
+
+    	
+	
+		<span id="ctl00_ctl00_MC_AMC_Answers_ctl00_A_ReportItem_ReportWrapper" class="report-item-wrapper">
+
+<span id="ctl00_ctl00_MC_AMC_Answers_ctl00_A_ReportItem_ResultMsg" class="result tiny-text invisible"></span>
+
+
+
+
+
+</span>
+
+		
+	</div>
+	
+	
+	
+	<div class="meta-data">
+		<b>Posted</b> <time itemprop="dateCreated" datetime="2017-03-24T00:03:00">24-Mar-17 0:03am</time>
+<div class="member-rep-container">  
+	<a id="ctl00_ctl00_MC_AMC_Answers_ctl00_A_AuthorRepInfo_MemberName" href="/script/Membership/View.aspx?mid=2225683"><span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">Jochen Arndt</span></span></a><span id="ctl00_ctl00_MC_AMC_Answers_ctl00_A_AuthorRepInfo_TotalPoints" title="Total reputation points" class="member-rep-box"></span>
+</div>
+
+	</div>
+    
+
+	
+	
+
+	
+	
+
+	
+	
+</div>
+
+   
+
+<div style="clear:both"></div>
+
+
+<a id="ctl00_ctl00_MC_AMC_Answers_ctl00_A_CommentCtrlObj_ContainerPermalink" class="CommentAnchor" name="cmt2_1178463"></a>
+
+<div id="ctl00_ctl00_MC_AMC_Answers_ctl00_A_CommentCtrlObj_CommentContainer" class="container-comments" ObjectRef="2_1178463_1" PageNumber="0" PageSize="0" BoldMemberId="2225683" CurrentMemberId="0" ModifyStatus="False">	 
+
+	
+	
+
+	
+	<div name="CP-CommentList" class="comment-list">
+		
+	</div> 
+
+	 
+	
+
+	  
+
+</div> 
+
+
+</div>
+
+
+
+
+
+	        
+		        <div id="ctl00_ctl00_MC_AMC_Answers_ctl01_A_AnswerGroup" class="answer-row answer" itemscope="" itemtype="http://schema.org/Answer" itemprop="suggestedAnswer">
+
+
+<div id="ctl00_ctl00_MC_AMC_Answers_ctl01_A_Header" class="header container">
+
+	
+	
+	<div class="rate-group">
+
+		<div class="rate-item">
+			<div id="ctl00_ctl00_MC_AMC_Answers_ctl01_A_RatePost_RateItemWrapper" class="container-rating small-text" name="RateItem_1178464">
+
+	<table width="100%" cellpadding="0" cellspacing="0" class="small-text">
+	<tr>
+		<td id="ctl00_ctl00_MC_AMC_Answers_ctl01_A_RatePost_VoteResultDiv" class="rating-result align-right">
+			<span class="align-right"></span>
+			<img class="loading invisible" width="16px" alt="loading..." height="16px" 
+				src="/images/loading16.gif" /> 
+		</td>
+
+	
+		<td class="voteTbl" style="white-space:nowrap" align="right">
+			<table class="small-text">
+			<tr>
+				<td id="ctl00_ctl00_MC_AMC_Answers_ctl01_A_RatePost_RateText" class="rating-prompt">
+					Rate this:
+				</td>
+
+				
+				<td id="ctl00_ctl00_MC_AMC_Answers_ctl01_A_RatePost_VoteFormDiv" class="nowrap tooltip rating-stars-voter-medium" style="padding-top:1px">
+
+                    
+					
+
+
+
+<table id="ctl00_ctl00_MC_AMC_Answers_ctl01_A_RatePost_ItemRating_RatingTable" cellpadding="0" cellspacing="0" style="margin:0 1px;" class="hide-on-hover float-left">
+	<tr>
+		<td class="nowrap">
+
+        <div class="rating-stars-medium"><img src="https://codeproject.freetls.fastly.net/script/Ratings/Images/stars-empty-md.png" style="width:80px;height:16px"></div>
+
+		
+	</td>
+	</tr>
+</table>
+
+<span id="ctl00_ctl00_MC_AMC_Answers_ctl01_A_RatePost_ItemRating_RatingText"></span>
+
+
+                    
+					<span id="ctl00_ctl00_MC_AMC_Answers_ctl01_A_RatePost_RB" class="ajaxHist radio voting show-on-hover">
+						<span id="ctl00_ctl00_MC_AMC_Answers_ctl01_A_RatePost_VoteRBL"><input id="ctl00_ctl00_MC_AMC_Answers_ctl01_A_RatePost_VoteRBL_0" type="radio" name="ctl00$ctl00$MC$AMC$Answers$ctl01$A$RatePost$VoteRBL" value="1" /><input id="ctl00_ctl00_MC_AMC_Answers_ctl01_A_RatePost_VoteRBL_1" type="radio" name="ctl00$ctl00$MC$AMC$Answers$ctl01$A$RatePost$VoteRBL" value="2" /><input id="ctl00_ctl00_MC_AMC_Answers_ctl01_A_RatePost_VoteRBL_2" type="radio" name="ctl00$ctl00$MC$AMC$Answers$ctl01$A$RatePost$VoteRBL" value="3" /><input id="ctl00_ctl00_MC_AMC_Answers_ctl01_A_RatePost_VoteRBL_3" type="radio" name="ctl00$ctl00$MC$AMC$Answers$ctl01$A$RatePost$VoteRBL" value="4" /><input id="ctl00_ctl00_MC_AMC_Answers_ctl01_A_RatePost_VoteRBL_4" type="radio" name="ctl00$ctl00$MC$AMC$Answers$ctl01$A$RatePost$VoteRBL" value="5" /></span> 
+					</span>
+
+                    
+					
+
+                    
+	                
+
+                    
+                    <div id="ctl00_ctl00_MC_AMC_Answers_ctl01_A_RatePost_RSU" class="speech-bubble-container-down">
+		                <div class="speech-bubble-down">
+                            Please <a id="ctl00_ctl00_MC_AMC_Answers_ctl01_A_RatePost_SignUp" href="https://www.codeproject.com/script/Membership/LogOn.aspx?rp=%2fQuestions%2f1178451%2fHow-to-download-a-webpage-into-a-txt-file-using-Cs">Sign up or sign in</a> 
+                            to vote.
+		                </div>
+		                <div class="speech-bubble-pointer-down">
+			                <div class="speech-bubble-pointer-down-inner"></div>
+		                </div>
+	                </div>    
+
+				</td>
+
+				
+                
+
+				<td style="padding-left:5px">	
+					<input type="submit" name="ctl00$ctl00$MC$AMC$Answers$ctl01$A$RatePost$SubmitRateBtn" value="Vote!" id="ctl00_ctl00_MC_AMC_Answers_ctl01_A_RatePost_SubmitRateBtn" class="button" />
+				</td>
+			</tr>
+			</table>
+
+			
+		</td>
+	</tr>
+	</table>
+
+</div>
+		</div>
+
+        
+	</div>
+	
+
+	
+	<h2 id="ctl00_ctl00_MC_AMC_Answers_ctl01_A_Title" class="float-left" style="margin:-10px 0 0 5px">Solution 3</h2><a id="ctl00_ctl00_MC_AMC_Answers_ctl01_A_Heading" itemprop="url" name="answer3"></a>
+
+	
+	<div class="float-left" style="margin:3px 0 0 20px">
+	<a id="ctl00_ctl00_MC_AMC_Answers_ctl01_A_Accept" title="Mark this solution as an accepted solution." class="button safe" style="display:none;">AcceptÂ Solution</a>
+	<a id="ctl00_ctl00_MC_AMC_Answers_ctl01_A_Unaccept" title="Revoke accepted solution designation." class="button unsafe" style="display:none;">RejectÂ Solution</a>
+	</div>
+
+	<p id="AcceptError" class="error" style="display:none"></p>
+		
+	
+	
+</div>
+
+
+<div class="text" itemprop="text">
+    <html><head></head><body>It's pretty simple:<br>
+<pre lang="c#" data-lang-orig="c#">WebClient wc = <span class="code-keyword">new</span> WebClient();
+<span class="code-keyword">string</span> html = wc.DownloadString(URL);
+File.WriteAllText(path, html);</pre></body></html>
+</div>
+
+<div></div>
+
+<div class="qa-info clearfix">
+	
+	<div class="float-right commands">
+
+		
+		&nbsp;
+		<a id="ctl00_ctl00_MC_AMC_Answers_ctl01_A_Permalink" rel="nofollow" itemprop="url" href="/Answers/1178464/How-to-download-a-webpage-into-a-txt-file-using-Cs">Permalink</a>
+		&nbsp;
+		 
+
+		
+
+    	
+	
+		<span id="ctl00_ctl00_MC_AMC_Answers_ctl01_A_ReportItem_ReportWrapper" class="report-item-wrapper">
+
+<span id="ctl00_ctl00_MC_AMC_Answers_ctl01_A_ReportItem_ResultMsg" class="result tiny-text invisible"></span>
+
+
+
+
+
+</span>
+
+		
+	</div>
+	
+	
+	
+	<div class="meta-data">
+		<b>Posted</b> <time itemprop="dateCreated" datetime="2017-03-24T00:06:00">24-Mar-17 0:06am</time>
+<div class="member-rep-container">  
+	<a id="ctl00_ctl00_MC_AMC_Answers_ctl01_A_AuthorRepInfo_MemberName" href="/script/Membership/View.aspx?mid=6122202"><span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">OriginalGriff</span></span></a><span id="ctl00_ctl00_MC_AMC_Answers_ctl01_A_AuthorRepInfo_TotalPoints" title="Total reputation points" class="member-rep-box"></span>
+</div>
+
+	</div>
+    
+
+	
+	
+
+	
+	
+
+	
+	
+</div>
+
+   
+
+<div style="clear:both"></div>
+
+
+<a id="ctl00_ctl00_MC_AMC_Answers_ctl01_A_CommentCtrlObj_ContainerPermalink" class="CommentAnchor" name="cmt2_1178464"></a>
+
+<div id="ctl00_ctl00_MC_AMC_Answers_ctl01_A_CommentCtrlObj_CommentContainer" class="container-comments" ObjectRef="2_1178464_1" PageNumber="0" PageSize="0" BoldMemberId="6122202" CurrentMemberId="0" ModifyStatus="False">	 
+
+	
+	
+
+	
+	<div name="CP-CommentList" class="comment-list">
+		
+	</div> 
+
+	 
+	
+
+	  
+
+</div> 
+
+
+</div>
+
+
+
+
+
+	        
+        </div>
+
+        
+        
+		
+
+        
+        <div class="padded-top">
+        <a id="ctl00_ctl00_MC_AMC_AddChild2" class="button large" href="/Questions/1178451/answer.aspx">Add a Solution</a>
+        </div>
+
+    
+
+    
+    <div id="NewEntryGroup" class="container" style="display:none;">
+	    
+
+<div id="PostEntryContainer" class="AnswersPost">
+
+
+<h2 id="ctl00_ctl00_MC_AMC_PostEntryObj_NewEntryHeading" class="contrast1-color">Add your solution here</h2>
+
+
+<input name="ctl00$ctl00$MC$AMC$PostEntryObj$CustomValidationHook" type="text" id="ctl00_ctl00_MC_AMC_PostEntryObj_CustomValidationHook" style="display:none" />
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-post new-message">
+
+	<div class="inline">
+
+		
+		
+
+		<a name="PostContent"></a>
+
+		
+		
+
+		
+		<div class="clearfix">
+            
+
+<div id="ctl00_ctl00_MC_AMC_PostEntryObj_Content_FormatBar" class="desktop-only tablet-only"><button class="toolbar" onclick="editor_ctl00_ctl00_MC_AMC_PostEntryObj_Content.toggleWrapSelection('b');return false;" title="Wrap the Selected Text in HTML bold Tags"><b>&nbsp;B&nbsp;</b></button>
+<button class="toolbar" onclick="editor_ctl00_ctl00_MC_AMC_PostEntryObj_Content.toggleWrapSelection('i');return false;" title="Wrap the Selected Text in HTML Italic Tags"><i>&nbsp;I&nbsp;</i></button>
+<button class="toolbar" onclick="editor_ctl00_ctl00_MC_AMC_PostEntryObj_Content.toggleWrapSelection('u');return false;" title="Wrap the Selected Text in HTML Underline Tags">&nbsp;<u>U</u>&nbsp;</button>
+<button class="toolbar" onclick="editor_ctl00_ctl00_MC_AMC_PostEntryObj_Content.toggleWrapSelection('strike');return false;" title="Wrap the Selected Text in HTML strike through Tags"><strike>&nbsp;S&nbsp;</strike></button>
+<button class="toolbar" onclick="editor_ctl00_ctl00_MC_AMC_PostEntryObj_Content.toggleWrapSelection('small');return false;" title="Wrap the Selected Text in HTML small Tags"><small>small</small></button>
+<button class="toolbar" onclick="editor_ctl00_ctl00_MC_AMC_PostEntryObj_Content.toggleWrapSelection('big');return false;" title="Wrap the Selected Text in HTML big Tags">BIG</button>
+<span class="tooltip"><button class="toolbar" onclick="editor_ctl00_ctl00_MC_AMC_PostEntryObj_Content.toggleWrapSelection('pre');return false;" title="Wrap the Selected Text in 'pre' Tags: For separate source code blocks"><tt style="background-color: #FBEDBB;">code</tt></button>
+<div class="tooltip-flyout small-text" style="width:135px !important"><div class="list-item"><a href='#' onclick="return editor_ctl00_ctl00_MC_AMC_PostEntryObj_Content.toggleWrapSelection('pre','lang=&quot;text&quot;')">Plain Text</a></div><div class="list-item"><a href='#' onclick="return editor_ctl00_ctl00_MC_AMC_PostEntryObj_Content.toggleWrapSelection('pre','lang=&quot;c++&quot;')">C++</a></div><div class="list-item"><a href='#' onclick="return editor_ctl00_ctl00_MC_AMC_PostEntryObj_Content.toggleWrapSelection('pre','lang=&quot;CSS&quot;')">CSS</a></div><div class="list-item"><a href='#' onclick="return editor_ctl00_ctl00_MC_AMC_PostEntryObj_Content.toggleWrapSelection('pre','lang=&quot;c#&quot;')">C#</a></div><div class="list-item"><a href='#' onclick="return editor_ctl00_ctl00_MC_AMC_PostEntryObj_Content.toggleWrapSelection('pre','lang=&quot;Delphi&quot;')">Delphi / Pascal</a></div><div class="list-item"><a href='#' onclick="return editor_ctl00_ctl00_MC_AMC_PostEntryObj_Content.toggleWrapSelection('pre','lang=&quot;F#&quot;')">F#</a></div><div class="list-item"><a href='#' onclick="return editor_ctl00_ctl00_MC_AMC_PostEntryObj_Content.toggleWrapSelection('pre','lang=&quot;HTML&quot;')">HTML / XML / ASP</a></div><div class="list-item"><a href='#' onclick="return editor_ctl00_ctl00_MC_AMC_PostEntryObj_Content.toggleWrapSelection('pre','lang=&quot;java&quot;')">Java</a></div><div class="list-item"><a href='#' onclick="return editor_ctl00_ctl00_MC_AMC_PostEntryObj_Content.toggleWrapSelection('pre','lang=&quot;kotlin&quot;')">Kotlin</a></div><div class="list-item"><a href='#' onclick="return editor_ctl00_ctl00_MC_AMC_PostEntryObj_Content.toggleWrapSelection('pre','lang=&quot;Javascript&quot;')">Javascript</a></div><div class="list-item"><a href='#' onclick="return editor_ctl00_ctl00_MC_AMC_PostEntryObj_Content.toggleWrapSelection('pre','lang=&quot;SQL&quot;')">SQL</a></div><div class="list-item"><a href='#' onclick="return editor_ctl00_ctl00_MC_AMC_PostEntryObj_Content.toggleWrapSelection('pre','lang=&quot;Swift&quot;')">Swift</a></div><div class="list-item"><a href='#' onclick="return editor_ctl00_ctl00_MC_AMC_PostEntryObj_Content.toggleWrapSelection('pre','lang=&quot;Perl&quot;')">Perl</a></div><div class="list-item"><a href='#' onclick="return editor_ctl00_ctl00_MC_AMC_PostEntryObj_Content.toggleWrapSelection('pre','lang=&quot;PHP&quot;')">PHP</a></div><div class="list-item"><a href='#' onclick="return editor_ctl00_ctl00_MC_AMC_PostEntryObj_Content.toggleWrapSelection('pre','lang=&quot;Python&quot;')">Python</a></div><div class="list-item"><a href='#' onclick="return editor_ctl00_ctl00_MC_AMC_PostEntryObj_Content.toggleWrapSelection('pre','lang=&quot;vb&quot;')">VB</a></div><div class="list-item"><a href='#' onclick="return editor_ctl00_ctl00_MC_AMC_PostEntryObj_Content.toggleWrapSelection('pre','lang=&quot;xml&quot;')">XML</a></div></div></span><button class="toolbar" onclick="editor_ctl00_ctl00_MC_AMC_PostEntryObj_Content.toggleWrapSelection('code');return false;" title="Wrap the Selected Text in 'code' Tags: For code within sentences"><code>var</code></button>
+<button class="toolbar" onclick="editor_ctl00_ctl00_MC_AMC_PostEntryObj_Content.insertText('&l' + 't;');return false;" title="Insert HTML Extended Character Code For <">&nbsp;&lt;&nbsp;</button>
+<button class="toolbar" onclick="editor_ctl00_ctl00_MC_AMC_PostEntryObj_Content.insertText('&g' + 't;');return false;" title="Insert HTML Extended Character Code For >">&nbsp;&gt;&nbsp;</button>
+<button class="toolbar" onclick="editor_ctl00_ctl00_MC_AMC_PostEntryObj_Content.insertText('&a' + 'mp;');return false;" title="Insert HTML Extended Character Code For &">&nbsp;&amp;&nbsp;</button>
+<button class="toolbar" onclick="editor_ctl00_ctl00_MC_AMC_PostEntryObj_Content.inLinkErAte(null, false);return false;" title="Convert URL to a hyperlink">link</button>
+<button class="toolbar" onclick="editor_ctl00_ctl00_MC_AMC_PostEntryObj_Content.inLinkErAte(null, true);return false;" title="Convert URL to a hyperlink with optional 'New Window' link">[^]</button>
+<button class="toolbar" onclick="editor_ctl00_ctl00_MC_AMC_PostEntryObj_Content.encoderate();return false;" title="HTML encode text">encode</button>
+<button class="toolbar" onclick="editor_ctl00_ctl00_MC_AMC_PostEntryObj_Content.untab();return false;" title="Replace tabs with spaces">untab</button>
+<button class="toolbar" onclick="editor_ctl00_ctl00_MC_AMC_PostEntryObj_Content.fixCase();return false;" title="Fix the casing of a sentence">case</button>
+<button class="toolbar" onclick="editor_ctl00_ctl00_MC_AMC_PostEntryObj_Content.adjustLeading(4);return false;" title="indent">indent</button>
+<button class="toolbar" onclick="editor_ctl00_ctl00_MC_AMC_PostEntryObj_Content.adjustLeading(-4);return false;" title="outdent">outdent</button>
+</div>
+
+<div id="EditWrap" style="position:relative">
+	<table id="ctl00_ctl00_MC_AMC_PostEntryObj_Content_EditContainer" cellpadding="0" cellspacing="0" class="container-editor">
+	<tr valign="top">
+		<td style="width:100%">
+		<textarea name="ctl00$ctl00$MC$AMC$PostEntryObj$Content$MessageText" id="ctl00_ctl00_MC_AMC_PostEntryObj_Content_MessageText" class="resizable text-editor" style="width:100%;height:250px;"></textarea>
+		
+        
+	</td>
+	</tr>
+</table>
+
+</div>
+
+<div id="ctl00_ctl00_MC_AMC_PostEntryObj_Content_pasteDialog" class="paste-dialog invisible">
+
+	<div class="header"><a href="#" class="close-notify">OK</a>Paste as</div>
+
+    <div class="padded">
+	<span id="ctl00_ctl00_MC_AMC_PostEntryObj_Content_OnPasteSetting" class="small-text paste-options extended"><span Title="HTML markup will be removed from text" onmouseover="editor_ctl00_ctl00_MC_AMC_PostEntryObj_Content.previewPaste(&quot;text&quot;);" onmouseout="editor_ctl00_ctl00_MC_AMC_PostEntryObj_Content.previewPaste(editor_ctl00_ctl00_MC_AMC_PostEntryObj_Content.getPasteSetting());"><input id="ctl00_ctl00_MC_AMC_PostEntryObj_Content_OnPasteSetting_0" type="radio" name="ctl00$ctl00$MC$AMC$PostEntryObj$Content$OnPasteSetting" value="text" onclick="editor_ctl00_ctl00_MC_AMC_PostEntryObj_Content.previewPaste(&quot;text&quot;);" tabindex="8" /><label for="ctl00_ctl00_MC_AMC_PostEntryObj_Content_OnPasteSetting_0">Strip HTML</label></span><br /><span Title="Pasted text will automatically be HTML-encoded" onmouseover="editor_ctl00_ctl00_MC_AMC_PostEntryObj_Content.previewPaste(&quot;encoded&quot;);" onmouseout="editor_ctl00_ctl00_MC_AMC_PostEntryObj_Content.previewPaste(editor_ctl00_ctl00_MC_AMC_PostEntryObj_Content.getPasteSetting());"><input id="ctl00_ctl00_MC_AMC_PostEntryObj_Content_OnPasteSetting_1" type="radio" name="ctl00$ctl00$MC$AMC$PostEntryObj$Content$OnPasteSetting" value="encoded" onclick="editor_ctl00_ctl00_MC_AMC_PostEntryObj_Content.previewPaste(&quot;encoded&quot;);" tabindex="8" /><label for="ctl00_ctl00_MC_AMC_PostEntryObj_Content_OnPasteSetting_1">Encode HTML</label></span><br /><span Title="Clipboard will be pasted as-is, preserving HTML tags and entities." onmouseover="editor_ctl00_ctl00_MC_AMC_PostEntryObj_Content.previewPaste(&quot;html&quot;);" onmouseout="editor_ctl00_ctl00_MC_AMC_PostEntryObj_Content.previewPaste(editor_ctl00_ctl00_MC_AMC_PostEntryObj_Content.getPasteSetting());"><input id="ctl00_ctl00_MC_AMC_PostEntryObj_Content_OnPasteSetting_2" type="radio" name="ctl00$ctl00$MC$AMC$PostEntryObj$Content$OnPasteSetting" value="html" checked="checked" onclick="editor_ctl00_ctl00_MC_AMC_PostEntryObj_Content.previewPaste(&quot;html&quot;);" tabindex="8" /><label for="ctl00_ctl00_MC_AMC_PostEntryObj_Content_OnPasteSetting_2">Paste as-is</label></span><br /><span Title="Clipboard text will be wrapped in PRE tags, and content HTML encoded, always" onmouseover="editor_ctl00_ctl00_MC_AMC_PostEntryObj_Content.previewPaste(&quot;code&quot;);" onmouseout="editor_ctl00_ctl00_MC_AMC_PostEntryObj_Content.previewPaste(editor_ctl00_ctl00_MC_AMC_PostEntryObj_Content.getPasteSetting());"><input id="ctl00_ctl00_MC_AMC_PostEntryObj_Content_OnPasteSetting_3" type="radio" name="ctl00$ctl00$MC$AMC$PostEntryObj$Content$OnPasteSetting" value="code" onclick="editor_ctl00_ctl00_MC_AMC_PostEntryObj_Content.previewPaste(&quot;code&quot;);" tabindex="8" /><label for="ctl00_ctl00_MC_AMC_PostEntryObj_Content_OnPasteSetting_3">Code block</label></span><br /><span Title="Clipboard text will be pasted within a quote block" onmouseover="editor_ctl00_ctl00_MC_AMC_PostEntryObj_Content.previewPaste(&quot;quote&quot;);" onmouseout="editor_ctl00_ctl00_MC_AMC_PostEntryObj_Content.previewPaste(editor_ctl00_ctl00_MC_AMC_PostEntryObj_Content.getPasteSetting());"><input id="ctl00_ctl00_MC_AMC_PostEntryObj_Content_OnPasteSetting_4" type="radio" name="ctl00$ctl00$MC$AMC$PostEntryObj$Content$OnPasteSetting" value="quote" onclick="editor_ctl00_ctl00_MC_AMC_PostEntryObj_Content.previewPaste(&quot;quote&quot;);" tabindex="8" /><label for="ctl00_ctl00_MC_AMC_PostEntryObj_Content_OnPasteSetting_4">Quoted Text</label></span><br /><span Title="Sniff pasted text to see if it contains code, and wrap in PRE blocks if it does" onmouseover="editor_ctl00_ctl00_MC_AMC_PostEntryObj_Content.previewPaste(&quot;auto&quot;);" onmouseout="editor_ctl00_ctl00_MC_AMC_PostEntryObj_Content.previewPaste(editor_ctl00_ctl00_MC_AMC_PostEntryObj_Content.getPasteSetting());"><input id="ctl00_ctl00_MC_AMC_PostEntryObj_Content_OnPasteSetting_5" type="radio" name="ctl00$ctl00$MC$AMC$PostEntryObj$Content$OnPasteSetting" value="auto" onclick="editor_ctl00_ctl00_MC_AMC_PostEntryObj_Content.previewPaste(&quot;auto&quot;);" tabindex="8" /><label for="ctl00_ctl00_MC_AMC_PostEntryObj_Content_OnPasteSetting_5">Best guess</label></span></span>
+	</div>
+
+	<div id="expando" class="invisible">
+		<div class="header">To display as</div>
+		<table width="100%" cellpadding="0" cellspacing="0">
+		<tr><td class="MsgBd BdSel"><div id="pasteHtmlPreview" class="paste-preview"></div></td></tr>
+		</table>
+	</div>
+
+</div>
+		</div>
+
+		
+
+        
+
+		<div class="small-text padded-top">
+			<span class="small-text invisible"><input id="ctl00_ctl00_MC_AMC_PostEntryObj_IgnoreHtml" type="checkbox" name="ctl00$ctl00$MC$AMC$PostEntryObj$IgnoreHtml" tabindex="6" /><label for="ctl00_ctl00_MC_AMC_PostEntryObj_IgnoreHtml">Treat my content as plain text, not as HTML</label></span>
+		</div>
+
+		
+		<h2>Preview <span id="refresh-count" style="display:none">0</span></h2>
+		<div id="Preview" class="preview">&hellip;</div>
+
+		
+		
+
+		
+		<br />
+		<p id="AjaxLogonErrors" class="error callout" style="display:none"></p>
+		
+
+<div id="LogOnContainer">
+
+<table class="member-signin" cellspacing="0">
+<tr>
+	<td id="ctl00_ctl00_MC_AMC_PostEntryObj_MemberLogOn_ExistHead" colspan="2"><h3>Existing Members</h3>
+		<div style="margin:-20px 0 10px" class="subdue">Sign in to your account</div>
+	</td>
+<td id="ctl00_ctl00_MC_AMC_PostEntryObj_MemberLogOn_QuickSignHead" colspan="2"><h3 id="ctl00_ctl00_MC_AMC_PostEntryObj_MemberLogOn_QuickTitle">...or Join us</h3>
+		<div style="margin:-20px 0 10px" class="subdue">Download, Vote, Comment, Publish.</div>
+	</td>
+
+</tr>
+
+<tr valign="top">
+
+	
+	<td>
+
+		<table>
+		<tr>
+			<td class="align-middle align-right nowrap">Your Email &nbsp;</td>
+			<td><input name="ctl00$ctl00$MC$AMC$PostEntryObj$MemberLogOn$CurrentEmail" id="ctl00_ctl00_MC_AMC_PostEntryObj_MemberLogOn_CurrentEmail" class="small-text" type="email" autocomplete="email" /></td>
+		</tr>
+		<tr>
+			<td class="align-middle align-right nowrap">Password &nbsp;</td>
+			<td><input name="ctl00$ctl00$MC$AMC$PostEntryObj$MemberLogOn$CurrentPassword" type="password" id="ctl00_ctl00_MC_AMC_PostEntryObj_MemberLogOn_CurrentPassword" class="small-text" autocomplete="current-password" /></td>
+		</tr>
+		<tr>
+			<td colspan="2" class="align-middle align-right nowrap">
+				
+				<div><a id="ctl00_ctl00_MC_AMC_PostEntryObj_MemberLogOn_SendPassword" class="forgot small-text" href="https://www.codeproject.com/script/Membership/SendPassword.aspx?rp=/">Forgot your password?</a></div>
+			</td>
+		</tr>
+		</table>
+
+	</td>
+	<td width="70px">&nbsp;</td>
+
+	<td>
+
+		<table>
+		<tr>
+			<td class="align-middle align-right nowrap">Your Email &nbsp;</td>
+			<td class="align-right">
+				<input name="ctl00$ctl00$MC$AMC$PostEntryObj$MemberLogOn$QuickEmail" id="ctl00_ctl00_MC_AMC_PostEntryObj_MemberLogOn_QuickEmail" class="small-text" type="email" autocomplete="off" />
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<div id="NewEmailError" class="locked invisible small-text" style="margin-top:-10px">This
+				email is in use. Do you need your <a id="ctl00_ctl00_MC_AMC_PostEntryObj_MemberLogOn_Password2" href="https://www.codeproject.com/script/Membership/SendPassword.aspx?rp=/">password</a>?</div>
+				
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" class="align-middle align-right nowrap subdue">
+				Optional Password &nbsp;
+				<input name="ctl00$ctl00$MC$AMC$PostEntryObj$MemberLogOn$QuickPassword" type="password" id="ctl00_ctl00_MC_AMC_PostEntryObj_MemberLogOn_QuickPassword" class="small-text" autocomplete="off" />
+                <div id="password-strength-quick" style="margin-top: -10px; padding-bottom: 10px;"></div>
+			</td>
+		</tr>
+        
+		<tr>
+			<td colspan="2" class="align-right small-text">
+				
+			</td>
+		</tr>
+		</table>
+
+	</td>
+	<td width="70px">&nbsp;</td>
+
+	
+</tr>
+
+
+
+</table>
+
+<div id="ctl00_ctl00_MC_AMC_PostEntryObj_MemberLogOn_Choices" style="margin-top:20px;width:275px;margin-left:335px;" class="small-text subdue">
+    <input id="ctl00_ctl00_MC_AMC_PostEntryObj_MemberLogOn_TermsOfUse" type="checkbox" name="ctl00$ctl00$MC$AMC$PostEntryObj$MemberLogOn$TermsOfUse" checked="checked" /><label for="ctl00_ctl00_MC_AMC_PostEntryObj_MemberLogOn_TermsOfUse">I have read and agree to the <a target="_blank" href="/info/TermsOfUse.aspx">Terms of Service</a> and <a target="_blank" href="/info/privacy.aspx">Privacy Policy</a></label><br />
+    <span onchange="logonCtrlObject.OnNewslettersCheckChange(this);"><input id="ctl00_ctl00_MC_AMC_PostEntryObj_MemberLogOn_AllNewsletters" type="checkbox" name="ctl00$ctl00$MC$AMC$PostEntryObj$MemberLogOn$AllNewsletters" checked="checked" /><label for="ctl00_ctl00_MC_AMC_PostEntryObj_MemberLogOn_AllNewsletters">Please subscribe me to the CodeProject newsletters</label></span>
+</div>
+
+</div>
+
+<script type="text/javascript">
+    function LogonCtrlObject()
+    {
+        var clickedOptin = false;
+
+        this.OnCountryChange = function (CASL, subscribing) {
+        }
+
+        this.OnNewslettersCheckChange = function (checkbox) {
+            clickedOptin = true;
+        }
+
+        this.OnCountrySelectionChange = function (dropdown) {
+            var CASLCountries = [ "Canada",];
+            if (dropdown.selectedIndex >= 0) {
+                var country = dropdown[dropdown.selectedIndex].text;
+
+                var useCASL = false;
+                for (i = 0; i < CASLCountries.length; i++) {
+                    if (CASLCountries[i] == country) {
+                        useCASL = true;
+                        break;
+                    }
+                }
+
+                if (!clickedOptin)
+                    $('#ctl00_ctl00_MC_AMC_PostEntryObj_MemberLogOn_AllNewsletters').prop('checked', !useCASL);
+
+                logonCtrlObject.OnCountryChange(useCASL, $('#ctl00_ctl00_MC_AMC_PostEntryObj_MemberLogOn_AllNewsletters').prop('checked'));
+            }
+        }
+    }
+
+    var logonCtrlObject = new LogonCtrlObject();
+</script>
+
+
+		
+		<div class="clearfix padded-top">
+		
+		<div id="AjaxSubmitGroup" style="display:none">
+			<a href="javascript:void(0)" id="ctl00_ctl00_MC_AMC_PostEntryObj_AjaxSubmit" class="button-large safe" onclick="OnAjaxSubmit(); return false;">Submit your solution!</a>
+		</div>
+		</div>
+
+		
+		<p id="AjaxSubmitErrors" class="error callout" style="display:none"></p>
+
+        
+        <div id="PostEntryMessage" class="padded-top"></div>
+
+		
+		<div class="callout">
+	    	When answering a question please:<br />
+		    <ol class="spaced">
+			<li>Read the question carefully.</li>
+			<li>Understand that English isn't everyone's first language so be lenient of bad
+			spelling and grammar.</li>
+			<li>If a question is poorly phrased then either ask for clarification, ignore it, or
+			<b>edit the question</b> and fix the problem. Insults are not welcome.</li>
+            <li>Don't tell someone to read the manual. Chances are they have and don't get it.
+                Provide an answer or move on to the next question.
+		    </ol>
+		    Let's work to help developers, not make them feel stupid.
+		</div>
+		
+
+	</div>
+
+    
+	
+
+	
+    <div class="clearfix"></div>
+
+	
+</div>
+
+
+</div>
+<br style="clear:both" />
+    </div>
+
+    
+    <div id="ctl00_ctl00_MC_AMC_LicenseTerms" class="small-text" style="margin-top:20px;"><p class="small-text">This content, along with any associated source code and files, is licensed under <a href="http://www.codeproject.com/info/cpol10.aspx" rel="license">The Code Project Open License (CPOL)</a></p></div>
+</div> 
+
+
+
+
+	<!-- Main Page Contents End -->
+
+	</div>
+
+</div>
+
+
+
+<div id="ctl00_ctl00_MC_NavRight" class="text-sidebar question">
+
+	
+
+<div class="align-right">
+    <div style="display:inline-block;position:relative;top:-5px">
+        
+    </div>
+    &nbsp;
+    <a id="ctl00_ctl00_MC_Tools_PrintLnk" data-enabletooltip="true" data-tooltip="Print" data-width="auto" rel="nofollow" href="/Questions/1178451/How-to-download-a-webpage-into-a-txt-file-using-Cs?display=Print"><img 
+	    src="/App_Themes/CodeProject/Img/print48.png"
+	    style="width:24px;height:24px;border:0pt none;" alt="Print"></a>
+
+     
+
+    <a id="ctl00_ctl00_MC_Tools_AnswersRSS" data-enabletooltip="true" data-tooltip="Quick Answers RSS feed" href="/webservices/QuestionRSS.aspx">
+        <img src="/App_Themes/CodeProject/Img/rss48.png" alt="Answers RSS" 
+            style="width:24px;height:24px;border:0pt none;" />
+        </a>
+
+    
+
+</div>
+
+	
+
+	
+    
+
+	
+
+	<div class="padded-top" style="height:250px">
+		<div class="msg-300x250" data-format="300x250" data-type="ad" data-publisher="lqm.codeproject.site" data-zone="ros"  data-country='US' data-tags='C#, WebClient'><noscript><a href="https://pubads.g.doubleclick.net/gampad/jump?iu=/6839/lqm.codeproject.site/ros&sz=300x250&c=879096"><img src="https://pubads.g.doubleclick.net/gampad/jump?iu=/6839/lqm.codeproject.site/ros&sz=300x250&c=879096"  width="300px" height="250px" target="_blank"/></a></noscript></div>
+	</div>
+
+	
+
+	<table class="experts-list padded-top">
+		<tr><td colspan="2" class="header">Top Experts</td></tr>
+		<tr class="subheader"><td width="50%">Last 24hrs</td><td width="50%">This month</td></tr>
+		<tr>
+			<td>
+
+<div class="">
+
+
+
+<table class="experts-list">
+<tr>
+
+<td class="name"><a id="MemberName" href="/script/Membership/View.aspx?mid=2217092"><font color="324454">Sandeep Mewara</font></a></td>
+<td align="right" class="points"><span title="Points earned in period">180</span></td>
+</tr>
+
+<tr>
+
+<td class="name"><a id="MemberName" href="/script/Membership/View.aspx?mid=6122202">OriginalGriff</a></td>
+<td align="right" class="points"><span title="Points earned in period">133</span></td>
+</tr>
+
+<tr>
+
+<td class="name"><a id="MemberName" href="/script/Membership/View.aspx?mid=4884011">CHill60</a></td>
+<td align="right" class="points"><span title="Points earned in period">70</span></td>
+</tr>
+
+<tr>
+
+<td class="name"><a id="MemberName" href="/script/Membership/View.aspx?mid=12169">Garth J Lancaster</a></td>
+<td align="right" class="points"><span title="Points earned in period">70</span></td>
+</tr>
+
+<tr>
+
+<td class="name"><a id="MemberName" href="/script/Membership/View.aspx?mid=767687">Richard MacCutchan</a></td>
+<td align="right" class="points"><span title="Points earned in period">50</span></td>
+</tr>
+</table>
+</div></td>
+			<td>
+
+<div class="">
+
+
+
+<table class="experts-list">
+<tr>
+
+<td class="name"><a id="MemberName" href="/script/Membership/View.aspx?mid=6122202">OriginalGriff</a></td>
+<td align="right" class="points"><span title="Points earned in period">4,385</span></td>
+</tr>
+
+<tr>
+
+<td class="name"><a id="MemberName" href="/script/Membership/View.aspx?mid=2217092"><font color="324454">Sandeep Mewara</font></a></td>
+<td align="right" class="points"><span title="Points earned in period">3,210</span></td>
+</tr>
+
+<tr>
+
+<td class="name"><a id="MemberName" href="/script/Membership/View.aspx?mid=767687">Richard MacCutchan</a></td>
+<td align="right" class="points"><span title="Points earned in period">1,728</span></td>
+</tr>
+
+<tr>
+
+<td class="name"><a id="MemberName" href="/script/Membership/View.aspx?mid=12169">Garth J Lancaster</a></td>
+<td align="right" class="points"><span title="Points earned in period">1,135</span></td>
+</tr>
+
+<tr>
+
+<td class="name"><a id="MemberName" href="/script/Membership/View.aspx?mid=4072603">Patrice T</a></td>
+<td align="right" class="points"><span title="Points earned in period">1,066</span></td>
+</tr>
+</table>
+</div></td>
+		</tr>
+	</table>
+
+    
+
+	
+		
+	<div style="margin:auto;width:160px;margin-top:10px" class="sticky-stop">
+		
+	</div>
+
+	<div class="padded-top related">
+		
+	<div id="ctl00_ctl00_MC_RelatedEntries_RelatedResults_ctl00_header" class="header">Related Questions</div>
+	<div class="content-list">	
+	
+	<div class="content-list-item">
+		<a id="ctl00_ctl00_MC_RelatedEntries_RelatedResults_ctl02_Link" href="//www.codeproject.com/Questions/578945/Howplustoplusdownloadplustxtplusfileplususingplusc">How to download txt file using code</a>
+		
+	</div>
+	
+	<div class="content-list-item">
+		<a id="ctl00_ctl00_MC_RelatedEntries_RelatedResults_ctl03_Link" href="//www.codeproject.com/Questions/97496/Invalid-body-structure-Problem-in-downloading-txt">Invalid body structure-Problem in downloading "txt" file</a>
+		
+	</div>
+	
+	<div class="content-list-item">
+		<a id="ctl00_ctl00_MC_RelatedEntries_RelatedResults_ctl04_Link" href="//www.codeproject.com/Questions/5272120/Txt-file-manipulation">Txt file manipulation</a>
+		
+	</div>
+	
+	<div class="content-list-item">
+		<a id="ctl00_ctl00_MC_RelatedEntries_RelatedResults_ctl05_Link" href="//www.codeproject.com/Questions/5257811/Align-text-on-file-txt">Align text on file txt</a>
+		
+	</div>
+	
+	<div class="content-list-item">
+		<a id="ctl00_ctl00_MC_RelatedEntries_RelatedResults_ctl06_Link" href="//www.codeproject.com/Questions/382303/How-to-write-and-download-a-file-from-webpage-in-c">How to write and download a file from webpage in c#.net</a>
+		
+	</div>
+	
+	<div class="content-list-item">
+		<a id="ctl00_ctl00_MC_RelatedEntries_RelatedResults_ctl07_Link" href="//www.codeproject.com/Questions/5261483/How-to-replace-data-in-txt-file-using-textboxes">How to replace data in txt file using textbox'es</a>
+		
+	</div>
+	
+	<div class="content-list-item">
+		<a id="ctl00_ctl00_MC_RelatedEntries_RelatedResults_ctl08_Link" href="//www.codeproject.com/Questions/346210/How-to-downlload-csv-file-using-code">How to downlload txt file using code</a>
+		
+	</div>
+	
+	<div class="content-list-item">
+		<a id="ctl00_ctl00_MC_RelatedEntries_RelatedResults_ctl09_Link" href="//www.codeproject.com/Questions/732618/How-to-download-txt-file-from-the-server-system-to">How to download txt file from the server system to client?</a>
+		
+	</div>
+	
+	<div class="content-list-item">
+		<a id="ctl00_ctl00_MC_RelatedEntries_RelatedResults_ctl10_Link" href="//www.codeproject.com/Questions/1122109/PDF-gets-downloaded-with-txt-extension-in-safari">PDF gets downloaded with txt extension in safari</a>
+		
+	</div>
+	
+	<div class="content-list-item">
+		<a id="ctl00_ctl00_MC_RelatedEntries_RelatedResults_ctl11_Link" href="//www.codeproject.com/Questions/124343/Creat-webpage-download">Creat webpage download</a>
+		
+	</div>
+	
+	</div>
+	
+
+	</div>
+
+</div>
+
+
+</div>
+<br />
+</form>
+
+
+
+
+                
+				
+
+				<br clear="all" />
+			</div>
+
+			<div class="theme1-background padded-top padded-bottom sticky-stop">
+				<div class="bottom-promo">
+					<div class="msg-728x90" data-format="728x90" data-type="ad" data-publisher="lqm.codeproject.site" data-zone="ros"  data-country='US' data-loadOnView='true'  data-tags='C#, WebClient,pos_bottom'><noscript><a href="https://pubads.g.doubleclick.net/gampad/jump?iu=/6839/lqm.codeproject.site/ros&sz=728x90&c=879096"><img src="https://pubads.g.doubleclick.net/gampad/jump?iu=/6839/lqm.codeproject.site/ros&sz=728x90&c=879096"  width="728px" height="90px" target="_blank"/></a></noscript></div>
+				</div>
+			</div>
+
+			<div class="site-footer">
+			    <div class="align-left">
+				    <a id="ctl00_ctl00_AdvertiseLink" href="http://developermedia.com/">Advertise </a><br>
+				    <a id="ctl00_ctl00_PrivacyLink" href="/info/privacy.aspx">Privacy</a><br>
+   				    <a id="ctl00_ctl00_CookiePolicyLink" href="/info/cookie.aspx">Cookies</a><br>
+                    <a id="ctl00_ctl00_TermsOfUseLink" href="/info/TermsOfUse.aspx">Terms of Use</a><br>
+					Last Updated 24 Mar 2017
+			    </div>
+
+			    <div class="align-center">
+			        
+
+
+<div class="page-width">
+    Layout: <a id="ctl00_ctl00_PageWidth_FixedT" title="Fixed width layout" rel="nofollow" class=" active" href="/Questions/1178451/How-to-download-a-webpage-into-a-txt-file-using-Cs?PageFlow=FixedWidth">fixed</a>
+    |
+    <a id="ctl00_ctl00_PageWidth_FluidT" title="Fluid layout" rel="nofollow" href="/Questions/1178451/How-to-download-a-webpage-into-a-txt-file-using-Cs?PageFlow=Fluid">fluid</a>
+</div>
+
+
+				    
+			    </div>
+
+			    <div class="align-right">
+					Copyright &copy; <a href="mailto:webmaster@codeproject.com">CodeProject</a>, 1999-2020 <br />
+					All Rights Reserved.<br>
+                    <br>
+				    Web01
+				    2.8.200821.1<br>
+                </div>
+			</div>
+
+			<br clear="all" />
+
+			
+
+	</div> 
+	</div> 
+	</div> 
+
+	<div id="ctl00_ctl00_Address" class="tiny-text subdue align-center padded-top">
+	CodeProject,
+	503-250 Ferrand Drive Toronto Ontario, M3C 3G8 Canada
+	+1 416-849-8900 x 100
+	</div>
+
+</div>
+<div id="page-bottom"></div>
+
+
+
+<script type="text/javascript"> // IMMEDIATE script
+
+var editor_ctl00_ctl00_MC_AMC_PostEntryObj_Content;
+
+var editor_ctl00_ctl00_MC_AMC_PostEntryObj_WhatHaveYouTried;
+
+function UpdateSize(elmName, indicator) {
+ var elm = document.getElementById(elmName);
+ if (elm) {
+  var indElm = document.getElementById(indicator);
+  if (indElm) indElm.value = elm.value.length.toString();
+ }
+}
+
+function OnEdit() { 
+    $('#Preview').html('');
+    $('#AjaxSubmitErrors').hide();
+    $('#AjaxLogonErrors').hide();
+}
+var validationData = {};
+validationData.postErrorDivId   = 'AjaxSubmitErrors';
+validationData.logonErrorDivId  = 'AjaxLogonErrors';
+validationData.generalErrorMsg  = 'An error occurred and we were unable to complete your request. The error has been logged and an administrator notified. Sorry :(';
+validationData.minContentLength = 30;
+validationData.maxContentLength = 50000;
+validationData.badLengthMsg     = 'Please provide more content.';
+
+var newEntryData = {};
+newEntryData.postUrl          = '/script/Answers/WebServices/ProcessNewEntry.aspx';
+newEntryData.typeName         = 'answer';
+newEntryData.parentId         = 1178451;
+newEntryData.parentTypeName   = 'answer';
+newEntryData.containerId      = 'PostEntryContainer';
+newEntryData.messageId        = 'PostEntryMessage';
+newEntryData.contentId        = 'ctl00_ctl00_MC_AMC_PostEntryObj_Content_MessageText';
+newEntryData.whatHaveYouTriedId = 'ctl00_ctl00_MC_AMC_PostEntryObj_WhatHaveYouTried_MessageText';
+newEntryData.submitBtnId      = 'AjaxSubmit';
+newEntryData.helpTipsId       = 'ctl00_ctl00_MC_AMC_PostEntryObj_HelpTips';
+newEntryData.useWysiwygEditor = false;
+newEntryData.ignoreHtmlId     = 'ctl00_ctl00_MC_AMC_PostEntryObj_IgnoreHtml';
+newEntryData.onPasteMode      = 'html';
+newEntryData.getEditorObject  = function(){ return editor_ctl00_ctl00_MC_AMC_PostEntryObj_Content; };
+newEntryData.recaptchaId      = 'g-recaptcha-response';
+
+var logonData = {};
+logonData.loggedIn    = false;
+logonData.postUrl     = 'https://www.codeproject.com/script/Membership/Ajax/ProcessLogonOrSignup.aspx';
+logonData.containerId = 'LogOnContainer';
+
+function OnAjaxSubmit() {
+    TryPostNewEntry(validationData, newEntryData, logonData);
+}
+
+var lastPreviewContent='';function RefreshPreview(previewHelper) {
+  var ignore=$('#ctl00_ctl00_MC_AMC_PostEntryObj_IgnoreHtml')[0];
+  var formatType=ignore.checked?'Text':'TextWithHtml';
+
+  var htmlContent = GetEditorContent(false, 'ctl00_ctl00_MC_AMC_PostEntryObj_Content_MessageText', 'ctl00_ctl00_MC_AMC_PostEntryObj_WhatHaveYouTried_MessageText');
+  if (lastPreviewContent != htmlContent) {
+    lastPreviewContent = htmlContent;
+    postData = {
+        'ParentId'         : newEntryData.parentId,
+        'Content'          : htmlContent,
+        'WysiwygEditorUsed': newEntryData.useWysiwygEditor,
+        'IgnoreHtml'       : $('#' + newEntryData.ignoreHtmlId)[0].checked,
+        'PasteMode'        : newEntryData.onPasteMode
+    };
+    $.ajax({
+        type:     'POST',
+        cache:    false,
+        dataType: 'json',
+        data:      postData,
+        timeout:   1000,
+        async:     true,
+        url:       '/script/Answers/Preview.aspx'
+    })
+    .done(function(data) {
+        if (!data || !data.html || data.html == '')
+            result = '<p class="error">Unexpected error when attempting to retrieve preview HTML.</p>';
+        else
+            result = decodeURIComponent(data.html);
+         $('#Preview').html(result);
+    })
+    .fail(function (xhr, textStatus, errorThrown) {
+        errorThrown;
+    });
+  }
+  else if (htmlContent.length == 0) {
+    $('#Preview').html('&hellip;');
+  }
+}
+
+function Join() {
+                                     document.location.href = 'https://www.codeproject.com/script/Membership/Modify.aspx';
+                                     return false;
+                                  }
+
+var jzssuscgzn = function(n){var t=!1;n=n||{};var r=n.RetrievalServiceUrl||"/script/content/webservices/RetrieveContent.aspx/GetContent",u=n.RetrievalServiceRetries||3,f=n.RetrievalServiceTimeout||5e3,e=function(){t||(t=!0,$(window).on("resize scroll",i),i())},i=function(){if(typeof DMAds=="undefined"){var n=$('[data-type="ad"]');n.each(function(){var n=$(this),u=n.attr("data-format")||"",f=n.attr("data-publisher")||"",e=n.attr("data-zone")||"",t=n.attr("data-loadonview"),i=n.attr("data-noadx"),h=n.attr("data-tags")||"",c=n.find("iframe").length!==0||n.find("img").length!==0,r=n.attr("data-processed");t=typeof t=="string"&&t.toLowerCase()==="true";i=typeof i=="string"&&i.toLowerCase()==="true";r=typeof r=="string"&&r.toLowerCase()==="true";r||c||t&&!s(this)||(o(n,u,f,e,i,h),n.attr("data-processed","true"))})}},o=function(n,t,i,e,o,s){var h=new $.Deferred,c=JSON.stringify({format:t,publisherCode:i,zone:e,noAdX:o,keywords:s});$.ajax({url:r,cache:!1,type:"POST",data:c,contentType:"application/json; charset=utf-8",dataType:"json",tryCount:0,retryLimit:u,timeout:f}).done(function(t){var i=t?t.d:null;h.resolve(i); i && i.html && n.html(i.html)}).fail(function(n,t){h.reject(t)})},s=function(n){var t,f,e,o;if(!h(n))return!1;var u=!1,i=0,r=0;try{t=n.getBoundingClientRect();typeof innerWidth=="number"?(i=window.innerWidth,r=window.innerHeight):document.documentElement&&(document.documentElement.clientWidth||document.documentElement.clientHeight)?(i=document.documentElement.clientWidth,r=document.documentElement.clientHeight):document.body&&(document.body.clientWidth||document.body.clientHeight)&&(i=document.body.clientWidth,r=document.body.clientHeight);f=-200;t.top===t.bottom&&(f+=n.height*-1);e=t.top>=0&&t.top-200<=r||t.top<=0&&t.top>=f;o=i>t.left&&t.right>=0;u=e&&o}catch(s){u=!0}return u},h=function(n){var t=!1,i;return n&&n.style.position!=="fixed"&&n.offsetParent?t=!0:n&&n.style.position==="fixed"&&(i=window.getComputedStyle(n),t=i&&i.display!=="none"),t&&c()},c=function(){var t=!0,n="";return typeof document.hidden!="undefined"?n="hidden":typeof document.mozHidden!="undefined"?n="mozHidden":typeof document.msHidden!="undefined"?n="msHidden":typeof document.webkitHidden!="undefined"&&(n="webkitHidden"),n!==null&&document[n]&&(t=!1),t};return{init:e}};
+document.addEventListener('DOMContentLoaded', function() {
+var n=window.XMLHttpRequest?new XMLHttpRequest:new ActiveXObject("MSXML2.XMLHTTP"),t;n.onreadystatechange=function(){try{if(n.readyState==4)if(n.status==200){var t=document.createElement("script");t.type="text/javascript";t.innerHTML=n.responseText;document.getElementsByTagName("body")[0].appendChild(t)}else(new jzssuscgzn).init()}catch(i){(new jzssuscgzn).init()}};try{t='/a.min.js?v=1.3';n.open("GET",t,!0);n.send()}catch(i){(new jzssuscgzn).init()}
+
+  setTimeout(function(){ 
+    $('div[data-type="ad"][data-showindicator="true"]').each(function( index ) {
+      if ($(this).height() > 0) {
+        $(this).prepend('<div class="small-text muted">Advertisement</div>');
+      }
+    });
+  }, 2000);
+
+});
+
+function PostBack_ctl00_ctl00_MC_AMC_RatePost_RateItemWrapper() {
+  return rateItem(null, 1178451,2,4,false,true,0,'MediumStars', null, 13081509);
+}
+
+function PostBack_ctl00_ctl00_MC_AMC_Answers_ctl00_A_RatePost_RateItemWrapper() {
+  return rateItem(null, 1178463,2,5,false,true,0,'MediumStars', null, 2225683);
+}
+
+var reportingMemberId = 0;
+
+function PostBack_ctl00_ctl00_MC_AMC_Answers_ctl01_A_RatePost_RateItemWrapper() {
+  return rateItem(null, 1178464,2,5,false,true,0,'MediumStars', null, 6122202);
+}
+
+function getVotesHistogram(objectId, objectTypeId, containerId, loadingId) {
+                        if (!$('#' + containerId).attr('alreadyRequested')){
+                            $.ajax({
+                                url: '/script/Ratings/Ajax/Histogram.aspx?obid=' + objectId + '&obtid='+objectTypeId+'&wd=130',
+                            })
+                            .done(function (data) {
+                                $('#' + containerId).html(data);
+                                $('#' + loadingId).hide();
+                            });
+
+                            $('#' + containerId).attr('alreadyRequested', 'true');
+                        }
+                    }
+
+var reportingMemberId = 0;
+
+var editorctl00_ctl00_MC_AMC_PostEntryObj_Content_MessageTextConfig = {
+    PasteDialogId:          'ctl00_ctl00_MC_AMC_PostEntryObj_Content_pasteDialog',
+    ShowPastePreviewWindow:  false,
+    PastePreviewOverEditor:  true,
+    LongMsgWarning:          true,
+    LocalLinksWarning:       true,
+    AllowImagePaste:         false,
+    ImageUploadServiceUrl:  '/script/content/webservices/UploadImage.aspx/Upload',
+    IgnoreHtmlId:           'ctl00_ctl00_MC_AMC_PostEntryObj_IgnoreHtml',
+    AllowMarkdownId:        '',
+    QuoteableElmId:         '',
+    PasteSettingElmId:      'ctl00_ctl00_MC_AMC_PostEntryObj_Content_OnPasteSetting', 
+    InitialPasteMode:       'html',
+    EnsureContentValidation: true,
+    OnSubmit:                null,
+    SniffCodeUrl:            '/script/content/ajax/SniffCode.aspx',
+    SniffCodeParameter:      'text',
+    SanitiseHtmlUrl:         '/script/Forums/Preview.aspx',
+
+    UploadImageTimeoutMs:    5000,
+    GetTitleTimeoutMs:       5000,
+    GetTitlePaths: [
+        {
+            'path'  : 'https://www.codeproject.com/kb',
+            'url'   : '/script/articles/ajax/GetTitle.aspx',
+            'param' : 'aurl'
+        },
+
+        {
+            'path'  : 'https://www.codeproject.com/articles',
+            'url'   : '/script/articles/ajax/GetTitle.aspx',
+            'param' : 'aurl'
+        },
+        {
+            'path'  : 'https://www.codeproject.com/articles',
+            'url'   : '/script/articles/ajax/GetTitle.aspx',
+            'param' : 'aurl'
+        },
+        {
+            'path'  : 'https://www.codeproject.com/articles',
+            'url'   : '/script/articles/ajax/GetTitle.aspx',
+            'param' : 'aurl'
+        },
+        {
+            'path'  : 'https://www.codeproject.com/articles',
+            'url'   : '/script/articles/ajax/GetTitle.aspx',
+            'param' : 'aurl'
+        },
+        {
+            'path'  : 'https://www.codeproject.com/tips',
+            'url'   : '/script/articles/ajax/GetTitle.aspx',
+            'param' : 'aurl'
+        },
+        {
+            'path'  : 'https://www.codeproject.com/reference',
+            'url'   : '/script/articles/ajax/GetTitle.aspx',
+            'param' : 'aurl'
+        },
+
+        {
+            'path'  : 'https://www.codeproject.com/questions',
+            'url'   : '/script/answers/ajax/GetTitle.aspx',
+            'param' : 'aurl'
+        },
+        {
+            'path'  : 'https://www.codeproject.com/answers',
+            'url'   : '/script/answers/ajax/GetTitle.aspx',
+            'param' : 'aurl'
+        },
+
+        // Default - MUST be last option here.
+        {
+            'path'  : null,
+            'url'   : '/script/content/ajax/GetTitle.aspx',
+            'param' : 'rp'
+        }
+    ]
+};
+
+var lasttime=new Date().getTime();
+function checkEmail(email) {
+  $.post('/script/Membership/Ajax/EmailExists.aspx?meml=' + escape(email),
+        function(data) {
+           if (data.toLowerCase() == 'true')
+             $('#NewEmailError').show();
+           else
+             $('#NewEmailError').hide();
+        });
+}
+
+var uwkalzr = false;
+var DMReportsOK = null;
+function showDMAlert() { 
+  var $div = $('div.msg-728x90');
+  $div.append($('<img src="/images/alert-top-block.gif" style="right:0;position:absolute;z-index:0">'));
+}
+function onDMcallBack(event)
+{
+   if (event.originalEvent) event = event.originalEvent;
+   jQuery.support.cors = true;
+   if (event.data === 'DM-disabled') DMReportsOK = false;
+   else if (event.data=='DM-enabled') DMReportsOK = true;
+   else if (typeof event.data == 'object' && event.data.sender &&             event.data.sender == 'DeveloperMedia' && event.data.application=='apps' &&
+            event.data.action == 'reportEnabled') {
+            DMReportsOK = event.data.data.enabled;
+   }
+   oewcgcthdb = !DMReportsOK;
+}
+function checkLoaded() { 
+ var showBlockMsg = false;
+ var block        = 'None';
+ if (block === 'None' && typeof DMAds === 'undefined')
+     block = 'ResourceBlocked';
+ if (block === 'None' && !document.getElementById('adbp-tester'))     block = 'ResourceBlocked';
+ if (block === 'None' && DMReportsOK === false)     block = 'DomModified';
+ oewcgcthdb = block != 'None';
+ if (uwkalzr) {
+  $.ajax({ url:'/script/Content/Ajax/VS.aspx',    data:{'cadm':block},     cache:false, async:true });
+};
+ if (showBlockMsg && block != 'None')
+    showDMAlert();
+}
+</script>
+
+<script type="text/javascript"> // DEFERRED script
+
+document.addEventListener('DOMContentLoaded', function() {
+
+	if ($('#ctl00_ctl00_MC_AMC_PostEntryObj_Content_MessageText').length) {
+	  editor_ctl00_ctl00_MC_AMC_PostEntryObj_Content = new TextEditor('#ctl00_ctl00_MC_AMC_PostEntryObj_Content_MessageText', editorctl00_ctl00_MC_AMC_PostEntryObj_Content_MessageTextConfig);
+	  editor_ctl00_ctl00_MC_AMC_PostEntryObj_Content.initialise();
+	}
+	
+	if ($('#ctl00_ctl00_MC_AMC_PostEntryObj_WhatHaveYouTried_MessageText').length) {
+	  editor_ctl00_ctl00_MC_AMC_PostEntryObj_WhatHaveYouTried = new TextEditor('#ctl00_ctl00_MC_AMC_PostEntryObj_WhatHaveYouTried_MessageText', editorctl00_ctl00_MC_AMC_PostEntryObj_WhatHaveYouTried_MessageTextConfig);
+	  editor_ctl00_ctl00_MC_AMC_PostEntryObj_WhatHaveYouTried.initialise();
+	}
+	
+	$('#NewEntryGroup').show();
+	$('#ctl00_ctl00_MC_AMC_AddChild2').hide();
+	$('#ctl00_ctl00_MC_AMC_AddChild1').attr('href', '#NewEntryGroup');
+	$('#ctl00_ctl00_MC_AMC_AddChild1').attr('name', 'anchorTarget');
+	anchorAnimate();
+	
+	processCodeBlocks.Initialise('#contentdiv', 400, true);
+	
+	if (document.all || window.getSelection) {
+	    $('#quote-button').show();
+	}
+	$('#TitleSize').prop('disabled', true);
+	
+	if (RegisterPreviewRefresh)
+	  RegisterPreviewRefresh(1000, 'ctl00_ctl00_MC_AMC_PostEntryObj_Content_MessageText', 'ctl00_ctl00_MC_AMC_PostEntryObj_WhatHaveYouTried_MessageText', false, 'ctl00_ctl00_MC_AMC_PostEntryObj_IgnoreHtml', '/script/Articles/WebServices/ArticleServices.aspx/UpdateEditLockStatus', 0);
+	
+	$('#ctl00_ctl00_MC_AMC_PostEntryObj_PostbackSubmitGroup').hide();
+	$('#AjaxSubmitGroup').show();
+	
+	$('#__EVENTVALIDATION').attr('autocomplete', 'off');
+	
+	$('#joinBtn').css('visibility', 'visible');
+	
+	$('.oauth').click(function () {
+	    $this = $(this);
+	    href = $this.attr('href');
+	    var myWindow = window.open(href, 'popup',
+	                              'width=800,height=600,location=0,menubar=0,resizeable=0,scrollbars=0,toolbar=0');
+	    myWindow.focus();
+	    var timer = setInterval(function () {
+	        if (myWindow.closed) {
+	            clearInterval(timer);
+	            // window.location.reload(); // May do a POST reload, shows a warning
+	            window.location = window.location; // force a GET reload
+	        }
+	    }, 200);
+	    return false;
+	});
+	
+	var oSrchFlt = false, oSrchBox=false, srchBoxFoc=false;
+	var sbar     = $('#sb_tb');
+	var sfilter  = $('#SearchFilter');
+	
+	if (typeof(InitWatermark) !== 'undefined')
+	  InitWatermark('sb_tb', 'Search for articles, questions, tips');
+	if (sbar && sfilter) {
+	  sfilter.removeClass('popup'); sfilter.hide(); sfilter.removeClass('open');
+	  sbar.blur(function() {
+	    if (!oSrchFlt) { sfilter.hide(); sfilter.removeClass('open'); }
+	    srchBoxFoc = false;
+	  });
+	  sbar.focus(function() {
+	    oSrchFlt   = false;
+	    srchBoxFoc = true;
+	    sfilter.show();
+	    sfilter.addClass('open');
+	  });
+	  sbar.mouseleave(function()    { oSrchBox = false; });
+	  sbar.mouseover(function()     { oSrchBox = true; });
+	  sfilter.mouseleave(function() {
+	    oSrchFlt=false;
+	    if (!srchBoxFoc && !oSrchBox) { sfilter.hide(); sfilter.removeClass('open'); }
+	  });
+	  sfilter.mouseover(function()  { oSrchFlt = true; });
+	}
+	
+	$('#usf').change(function() {$('#usfc').val('true');});
+	
+	$('#clear-rate_ctl00_ctl00_MC_AMC_RatePost_RSU').click(function () {    $('#ctl00_ctl00_MC_AMC_RatePost_RSU').hide(); return false;});
+	
+	new starRating('#ctl00_ctl00_MC_AMC_RatePost_RateItemWrapper', PostBack_ctl00_ctl00_MC_AMC_RatePost_RateItemWrapper,'ctl00_ctl00_MC_AMC_RatePost');
+	  $('#ctl00_ctl00_MC_AMC_RatePost_VoteFormDiv').mouseenter(function() {     getVotesHistogram(1178451,2   ,'ctl00_ctl00_MC_AMC_RatePost_HistogramC','ctl00_ctl00_MC_AMC_RatePost_LoadingC');
+	  });
+	
+	$('#ctl00_ctl00_MC_AMC_RatePost_SubmitRateBtn').hide();
+	function ChkRtctl00_ctl00_MC_AMC_RatePost(){}
+	
+	$('#clear-rate_ctl00_ctl00_MC_AMC_Answers_ctl00_A_RatePost_RSU').click(function () {    $('#ctl00_ctl00_MC_AMC_Answers_ctl00_A_RatePost_RSU').hide(); return false;});
+	
+	new starRating('#ctl00_ctl00_MC_AMC_Answers_ctl00_A_RatePost_RateItemWrapper', PostBack_ctl00_ctl00_MC_AMC_Answers_ctl00_A_RatePost_RateItemWrapper,'ctl00_ctl00_MC_AMC_Answers_ctl00_A_RatePost');
+	  $('#ctl00_ctl00_MC_AMC_Answers_ctl00_A_RatePost_VoteFormDiv').mouseenter(function() {     getVotesHistogram(1178463,2   ,'ctl00_ctl00_MC_AMC_Answers_ctl00_A_RatePost_HistogramC','ctl00_ctl00_MC_AMC_Answers_ctl00_A_RatePost_LoadingC');
+	  });
+	
+	$('#ctl00_ctl00_MC_AMC_Answers_ctl00_A_RatePost_SubmitRateBtn').hide();
+	function ChkRtctl00_ctl00_MC_AMC_Answers_ctl00_A_RatePost(){}
+	
+	$('#clear-rate_ctl00_ctl00_MC_AMC_Answers_ctl01_A_RatePost_RSU').click(function () {    $('#ctl00_ctl00_MC_AMC_Answers_ctl01_A_RatePost_RSU').hide(); return false;});
+	
+	new starRating('#ctl00_ctl00_MC_AMC_Answers_ctl01_A_RatePost_RateItemWrapper', PostBack_ctl00_ctl00_MC_AMC_Answers_ctl01_A_RatePost_RateItemWrapper,'ctl00_ctl00_MC_AMC_Answers_ctl01_A_RatePost');
+	  $('#ctl00_ctl00_MC_AMC_Answers_ctl01_A_RatePost_VoteFormDiv').mouseenter(function() {     getVotesHistogram(1178464,2   ,'ctl00_ctl00_MC_AMC_Answers_ctl01_A_RatePost_HistogramC','ctl00_ctl00_MC_AMC_Answers_ctl01_A_RatePost_LoadingC');
+	  });
+	
+	$('#ctl00_ctl00_MC_AMC_Answers_ctl01_A_RatePost_SubmitRateBtn').hide();
+	function ChkRtctl00_ctl00_MC_AMC_Answers_ctl01_A_RatePost(){}
+	
+	$('textarea.resizable:not(.processed)').TextAreaResizer(false);
+	
+	$('#NewEmailError').hide();
+	var emailEle = $('#ctl00_ctl00_MC_AMC_PostEntryObj_MemberLogOn_QuickEmail');
+	emailEle.blur(function() {
+	    var email = $.trim(emailEle.val());
+	    if (email.length > 0)
+	        checkEmail(email);
+	});
+	emailEle.keyup(function() {
+	    var email = $.trim(emailEle.val());
+	    var current=new Date().getTime();
+	    if (email.length > 0 && (current-lasttime) > 1000) {
+	        checkEmail(email);
+	        lasttime = current;
+	    }
+	});
+	
+	$('#ctl00_ctl00_MC_AMC_PostEntryObj_MemberLogOn_QuickPassword').passStrengthify({
+	      minimum:    8,
+	      element:    $('#password-strength-quick'),
+	      rawEntropy: false,
+	      labels: {
+	        tooShort:         'Too short',
+	        passwordStrength: 'Strength'
+	      }
+	  });
+	  $('#ctl00_ctl00_MC_AMC_PostEntryObj_MemberLogOn_ProPassword').passStrengthify({
+	      minimum:    8,
+	      element:    $('#password-strength-pro'),
+	      rawEntropy: false,
+	      labels: {
+	        tooShort:         'Too short',
+	        passwordStrength: 'Strength'
+	      }
+	  });
+	
+	cookieconsent.initialise({
+	                                    enabled : true,
+	                                    cookie  : { domain: 'codeproject.com' },
+	                                    palette : {
+	                                        popup: { background: '#ff9900' },
+	                                        button: { background: '#f5d948' }
+	                                    },
+	                                    law :  {
+	                                        showForAllRegions : true, 
+	                                        countryCode : 'US' 
+	                                    },
+	                                    theme: 'edgeless',
+	                                    type : 'opt-in',
+	                                    content: {
+	                                        message: 'Like every other website we use cookies. By using our site you acknowledge that you have read and understand our <a href=\'/info/cookie.aspx\'>Cookie Policy</a>, <a href=\'/info/privacy.aspx\'>Privacy Policy</a>, and our <a href=\'/info/TermsOfUse.aspx\'>Terms of Service</a>.',
+	                                        href:    'https://www.codeproject.com/info/privacy.aspx',
+	                                        dismiss: 'Ask me later'
+	                                    },
+	                                    revokable:true,
+	                                    onStatusChange: function(status) {
+	                                        $.ajax({
+	                                		    dataType  : 'json',
+	                                            data: JSON.stringify({ allowCookies : this.hasConsented() }),
+	                                            url: '/script/membership/webservices/LoggedOnMemberservices.aspx/SetCookieConsent',
+	                                            cache: false,
+	                                            type: 'POST',
+	                                            contentType: 'application/json'
+	                                        })
+	                                        console.log(this.hasConsented() ? 'enable cookies' : 'disable cookies');
+	                                        console.log(this.hasAnswered() ? 'has answered' : 'did not answer');
+	                                    },
+	                                });
+	
+	$(window).on('message', onDMcallBack);
+	setTimeout(checkLoaded, 4000);
+
+})
+</script>
+
+
+
+
+
+
+
+
+</body>
+
+</html>

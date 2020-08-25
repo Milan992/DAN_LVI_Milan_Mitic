@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -24,5 +26,13 @@ namespace WpfHtml
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            WebClient wc = new WebClient();
+            string html = wc.DownloadString(TextBox1.Text);
+            File.WriteAllText(@"..\..\" + TextBox2.Text+".html", html);
+        }
     }
 }
+
