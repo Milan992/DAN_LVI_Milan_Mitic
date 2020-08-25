@@ -25,11 +25,14 @@ namespace WpfHtml
                     string html = "";
                     try
                     {
+                        // get html from web site.
                         html = wc.DownloadString(TextBox1.Text);
-                        if (!File.Exists(@"..\..\" + TextBox2.Text + ".html"))
+                        // check if file with name from txt box already exists.
+                        if (!File.Exists(@"..\..\htmlFiles\" + TextBox2.Text + ".html"))
                         {
                             using (StreamWriter sw = new StreamWriter(@"..\..\htmlFiles\" + TextBox2.Text + ".html", false))
                             {
+                                // write html to file.
                                 sw.Write(html);
                             }
                             MessageBox.Show("Html file saved.");
